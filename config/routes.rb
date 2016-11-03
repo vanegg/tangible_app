@@ -1,3 +1,3 @@
 Rails.application.routes.draw do
-  root 'applica#hello'
+  root 'application#hello'
 end
