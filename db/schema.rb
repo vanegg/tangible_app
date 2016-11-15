@@ -10,7 +10,42 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161114164616) do
+ActiveRecord::Schema.define(version: 20161114195307) do
+
+  create_table "albums", force: :cascade do |t|
+    t.string   "title"
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_albums_on_user_id"
+  end
+
+  create_table "locations", force: :cascade do |t|
+    t.integer  "photo_id"
+    t.integer  "page_id"
+    t.integer  "page_place", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["page_id"], name: "index_locations_on_page_id"
+    t.index ["photo_id"], name: "index_locations_on_photo_id"
+  end
+
+  create_table "pages", force: :cascade do |t|
+    t.integer  "layout",     null: false
+    t.integer  "page_num",   null: false
+    t.integer  "album_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["album_id"], name: "index_pages_on_album_id"
+  end
+
+  create_table "photos", force: :cascade do |t|
+    t.string   "url",        null: false
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_photos_on_user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "name"
