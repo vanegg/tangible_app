@@ -31,8 +31,8 @@ album.save
     url = url + ('a'..'z').to_a.shuffle[0,8].join
     photo = Photo.new(photo: url)
     location = Location.create(photo_id: photo.id, page_id: page.id, page_place: 1)
+
     User.find(1).photos << photo
-    page.photos << photo
     photo.locations << location
     photo.save
   end
