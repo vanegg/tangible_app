@@ -8,4 +8,32 @@
       </h1>
     </section>
   </aside>
+  <div id="upload-photo">
+    <%= form_for [@user,@photo], :photo => user_photos_path(@user.id), html: { multipart: true } do |f| %>
+      <div class="field">
+        <%= f.label :photo %><br>
+        <%= f.file_field :photo %>
+        <%# if f.object.photo? %>
+          <%#= image_tag f.object.photo.thumb.url %>
+          <%#= f.label :remove_photo %>
+          <%#= f.check_box :remove_photo %> 
+        <%# end %>
+      </div>
+      <div class="actions">
+        <%= f.submit 'Upload', :class => 'btn btn-medium btn-primary' %>
+      </div>
+    <% end %>
+
+    <% if !@user.photos.empty? %>
+      <ul class="frames">
+        <% @user.photos.reverse.each do |photo| %>
+          <li>
+            <img src="<%= photo.photo_url(:small) %>">
+          </li>
+        <% end %>
+        <br>
+      </ul>
+    <% end %>
+
+  </div>
 </div>

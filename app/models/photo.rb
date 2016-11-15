@@ -1,11 +1,11 @@
 class Photo < ApplicationRecord
 
-	validates :url, uniqueness: true
+	# validates :photo, uniqueness: true  #da error 'cant cast PhotoUploader
 	has_many :locations
 	has_many :pages, through: :locations
 	# validate :image_size
 
-	mount_uploader :image, ImageUploader
+	mount_uploader :photo, PhotoUploader
 	 
 	# private
 	#   def image_size
