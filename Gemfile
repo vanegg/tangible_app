@@ -31,7 +31,8 @@ gem 'jbuilder', '~> 2.5'
 # gem 'bcrypt', '~> 3.1.7'
 
 # Upload and edit pictures
-gem 'carrierwave', github: 'carrierwaveuploader/carrierwave'
+# gem 'carrierwave', github: 'carrierwaveuploader/carrierwave'
+gem 'carrierwave'
 gem 'mini_magick', '>= 4.3'
 
 # Use Capistrano for deployment
@@ -61,6 +62,8 @@ end
 
 group :production do
 	gem 'pg', '0.18.4'
+  gem 'fog'
+  gem 'unf'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
