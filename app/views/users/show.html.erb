@@ -14,7 +14,7 @@
     <%#= render 'shared/error_messages', object: @var = @photo %>    
       <div class="field">
         <%= f.label :photo %><br>
-        <%= f.file_field :photo %>
+        <%= f.file_field :photo, multiple: true %>
       </div>
       <div class="actions">
         <%= f.submit 'Upload', :class => 'btn btn-medium btn-primary', :id => 'upload' %>

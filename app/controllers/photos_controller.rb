@@ -2,18 +2,28 @@ class PhotosController < ApplicationController
 
 	def create
 		@user = User.find(params[:user_id])
-		@photo = Photo.new(photo_params)
-    if @photo.save
-      @user.photos << @photo
-      flash[:success] = "Photo uploaded!"
-    else
-      flash[:danger] = "Unable to upload file. Please check it is in 'jpg', 'jpeg', 'gif', or 'png' format."
+    err_msg = []
+
+    photo_params[:photo].each do |photo_object|
+      @photo = Photo.new(photo: photo_object)
+      if @photo.save
+        @user.photos << @photo
+      else
+        err_msg << photo_object.original_filename
+      end
     end
+
+    if err_msg.empty?
+      flash[:success] = "Photo/s uploaded!"
+    else
+      flash[:danger] = "Unable to upload: #{err_msg.join()}"
+    end
+    
 		redirect_to user_path(params[:user_id])
 	end
 
 	private
 		def photo_params
-      params.require(:photo).permit(:photo)
+      params.require(:photo).permit({photo: []})
 		end
 end
