@@ -41,13 +41,13 @@ class PhotoUploader < CarrierWave::Uploader::Base
   # end
 
   # Create different versions of your uploaded files:
-  version :thumb2 do
+  # version :thumb2 do
 
-    process :crop
-    resize_to_fill(100,100)
-    # process :resize_to_limit => [60, 60]
-    # s3_access_policy :public
-  end
+  #   process :crop
+  #   resize_to_fill(100,100)
+  #   # process :resize_to_limit => [60, 60]
+  #   # s3_access_policy :public
+  # end
 
   version :thumb do
     process :resize_to_fit => [50, 50]
@@ -65,18 +65,18 @@ class PhotoUploader < CarrierWave::Uploader::Base
       process :resize_to_fit => [240, 180]
   end
 
-  def crop
-    if model.crop_x.present?
-      resize_to_limit(400,400)
-      manipulate! do |img|
-        x = model.crop_x.to_i
-        y = model.crop_y.to_i
-        w = model.crop_w.to_i
-        h = model.crop_h.to_i
-        img.crop!(x, y, w, h)
-      end
-    end
-  end
+  # def crop
+  #   if model.crop_x.present?
+  #     resize_to_limit(400,400)
+  #     manipulate! do |img|
+  #       x = model.crop_x.to_i
+  #       y = model.crop_y.to_i
+  #       w = model.crop_w.to_i
+  #       h = model.crop_h.to_i
+  #       img.crop!(x, y, w, h)
+  #     end
+  #   end
+  # end
 
   # Add a white list of extensions which are allowed to be uploaded.
   # For images you might use something like this:
