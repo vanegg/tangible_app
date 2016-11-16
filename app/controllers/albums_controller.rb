@@ -2,6 +2,7 @@ class AlbumsController < ApplicationController
 
   def new
     @album = Album.new
+   # render 'new2'
   end
 
   def create
