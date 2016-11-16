@@ -16,7 +16,8 @@ class AlbumsController < ApplicationController
     redirect_to album_show_path(@album.id)
   end
 
-  def index  
+  def index 
+   
   end
 
 end

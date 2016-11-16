@@ -1,0 +1,31 @@
+<h1 class= "page-title">
+	<span class= 'base'> My albums</span>
+</h1>
+
+<div class= "block">
+	<div class = "block-title order">
+		<h4><strong> Albums</strong></h4>
+	</div>
+</div>
+
+<table id="my-albums-table">
+	<thead>
+		<th scope= "col" class= "col id"> Album</th>
+		<th scope= "col" class= "col name"> Album name</th>
+		<th scope= "col" class= "col show delete"></th>
+	</thead>
+	<%if current_user.albums.length <= 0%>
+</table>
+		<h5>¡Ups! Aún no tienes álbumes creados</h5>
+		<p><a href="#">Crear album</a></p>
+	<%else%>
+		<tbody>
+			<%current_user.albums.each do |album|%>
+				<td><%=album.id%></td>
+				<td><%=album.title%></td>
+				<td><a href="#">Show</a>/<a href="">Delete</a></td>
+			<%end%>
+		</tbody>
+</table>
+	<%end%>
+	

@@ -1,0 +1,59 @@
+          <div class="nav-side-menu">
+          <div class="brand">Brand Logo</div>
+            <aside>
+              <section class="user_info">
+
+                <h1>
+                  <%= gravatar_for @user %>
+                  <%= @user.name %>
+                </h1>
+              </section>
+            </aside>
+            <i class="fa fa-bars fa-2x toggle-btn" data-toggle="collapse" data-target="#menu-content"></i>
+            
+                  <div class="menu-list">
+            
+                      <ul id="menu-content" class="menu-content collapse out">
+                          <li  data-toggle="collapse" data-target="#products" class="collapsed">
+
+                           <%= link_to "Mis álbumes", user_albums_path(current_user), class="fa fa-lg" %>
+
+                            <i class="fa fa-lg"></i> My albums <span class="arrow"></span>
+                          </li>
+                          
+
+                          <li  data-toggle="collapse" data-target="#products" class="collapsed active">
+                            <a href="#"><i class="fa fa-lg"></i> Image Galleries <span class="arrow"></span></a>
+                          </li>
+                          <ul class="sub-menu collapse" id="albums">
+                            <li>New Service 1</li>
+                            <li>New Service 2</li>
+                            <li>New Service 3</li>
+                          </ul>
+
+                          <li data-toggle="collapse" data-target="#service" class="collapsed">
+                            <a href="#"><i class="fa fa-order fa-lg"></i> Order History <span class="arrow"></span></a>
+                          </li>  
+                          
+
+
+                          <li data-toggle="collapse" data-target="#new" class="collapsed">
+                            <a href="#"><i class="fa fa-address fa-lg"></i> Address book <span class="arrow"></span></a>
+                          </li>
+                          <ul class="sub-menu collapse" id="new">
+                            <li>New New 1</li>
+                            <li>New New 2</li>
+                            <li>New New 3</li>
+                          </ul>
+
+                          <li data-toggle="collapse" class="collapsed">
+                            <a href="#"><i class="fa fa-lg"></i> My details <span class="arrow"></span></a>
+                          </li>
+
+                          <li data-toggle="collapse" class="collapsed">
+                            <a rel="nofollow" data-method="delete" href="/logout"><i class="fa fa-lg"></i> Logout</a>
+                          </li>
+
+                      </ul>
+               </div>
+          </div>
