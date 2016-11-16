@@ -1,5 +1,4 @@
-class UsersController < ApplicationController
-  before_action :correct_user,   only: [:edit, :update, :show, :new, :delete, :index]
+class AlbumsController < ApplicationController
 
   def new
     @album = Album.new
