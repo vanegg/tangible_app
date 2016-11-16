@@ -1,0 +1,8 @@
+<ul class="frames">
+  <% current_user.photos.reverse.each do |photo| %>
+    <li>
+      <img src="<%= photo.photo_url(:small) %>">
+    </li>
+  <% end %>
+  <br>
+</ul>
