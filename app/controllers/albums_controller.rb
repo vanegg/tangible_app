@@ -7,6 +7,6 @@ class UsersController < ApplicationController
 
   def create
     @album = Album.new(params[:title])
-    current_user.albums << 
+   # current_user.albums << 
   end
 end
