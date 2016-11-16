@@ -18,6 +18,9 @@ Rails.application.routes.draw do
   # resources :users
   resources :users do
     resources :photos
+    resources :albums do
+      resources :pages
+    end
   end
 
   resources :account_activations, only: [:edit]

@@ -87,30 +87,10 @@
 
           <!-- <div class="row"> -->
 
-            <div id="upload-photo">
-
-              <%= form_for [@user,@photo], :photo => user_photos_path(@user.id), html: { multipart: true } do |f| %>
-              <%#= render 'shared/error_messages', object: @var = @photo %>  
-              <br><br><br>  
-                <div class="field">
-                  <%= f.label :photo %><br>
-                  <%= f.file_field :photo, multiple: true %>
-                </div>
-                <div class="actions">
-                  <%= f.submit 'Upload', :class => 'btn btn-medium btn-primary', :id => 'upload' %>
-                </div>
-              <% end %>
-              <% if !@user.photos.empty? %>
-                <ul class="frames">
-                  <% @user.photos.reverse.each do |photo| %>
-                    <li>
-                      <img src="<%= photo.photo_url(:small) %>">
-                    </li>
-                  <% end %>
-                  <br>
-                </ul>
-              <% end %>
-            </div>
+          <%= render 'photos/new' %>
+  <% if !@user.photos.empty? %>
+    <%= render 'photos/index' %>    
+  <% end %>
           <!-- </div> -->
 
         </div>
