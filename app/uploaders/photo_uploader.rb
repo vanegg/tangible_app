@@ -4,11 +4,20 @@ class PhotoUploader < CarrierWave::Uploader::Base
 
   # Include RMagick or MiniMagick support:
   # include CarrierWave::RMagick
+  
+  # if RbConfig::CONFIG["target_os"] =~ /mswin|mingw|cygwin/i
+  #   include CarrierWave::MiniMagick
+  # else
+  #   include CarrierWave::RMagick
+  # end
   include CarrierWave::MiniMagick
 
   # Choose what kind of storage to use for this uploader:
-  storage :file
-  # storage :fog
+  if Rails.env.production?
+    storage :fog
+  else
+    storage :file
+  end
 
   # Override the directory where uploaded files will be stored.
   # This is a sensible default for uploaders that are meant to be mounted:
@@ -17,12 +26,12 @@ class PhotoUploader < CarrierWave::Uploader::Base
   end
 
   # Provide a default URL as a default if there hasn't been a file uploaded:
-  # def default_url
-  #   # For Rails 3.1+ asset pipeline compatibility:
-  #   # ActionController::Base.helpers.asset_path("fallback/" + [version_name, "default.png"].compact.join('_'))
-  #
-  #   "/images/fallback/" + [version_name, "default.png"].compact.join('_')
-  # end
+  def default_url
+    # For Rails 3.1+ asset pipeline compatibility:
+    ActionController::Base.helpers.asset_path("/assets/default/#{model.class.to_s.underscore}/" + [version_name, "default.png"].compact.join('_'))
+  
+    #"/images/fallback/" + [version_name, "default.png"].compact.join('_')
+  end
 
   # Process files as they are uploaded:
   # process :scale => [200, 300]
@@ -32,6 +41,14 @@ class PhotoUploader < CarrierWave::Uploader::Base
   # end
 
   # Create different versions of your uploaded files:
+  version :thumb2 do
+
+    process :crop
+    resize_to_fill(100,100)
+    # process :resize_to_limit => [60, 60]
+    # s3_access_policy :public
+  end
+
   version :thumb do
     process :resize_to_fit => [50, 50]
   end
@@ -46,6 +63,19 @@ class PhotoUploader < CarrierWave::Uploader::Base
 
   version :small, :from_version => :medium do
       process :resize_to_fit => [240, 180]
+  end
+
+  def crop
+    if model.crop_x.present?
+      resize_to_limit(400,400)
+      manipulate! do |img|
+        x = model.crop_x.to_i
+        y = model.crop_y.to_i
+        w = model.crop_w.to_i
+        h = model.crop_h.to_i
+        img.crop!(x, y, w, h)
+      end
+    end
   end
 
   # Add a white list of extensions which are allowed to be uploaded.
