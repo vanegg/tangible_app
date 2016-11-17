@@ -16,8 +16,7 @@
 	</thead>
 	<%if current_user.albums.length <= 0%>
 </table>
-		<h5>¡Ups! Aún no tienes álbumes creados</h5>
-		<p><a href="#">Crear album</a></p>
+		<h5>¡Ups! Aún no tienes álbumes creados</h5>	
 	<%else%>
 		<tbody>
 			<%current_user.albums.each do |album|%>
@@ -28,4 +27,4 @@
 		</tbody>
 </table>
 	<%end%>
-	
+<%=link_to "Crear album", new_user_album_path(current_user) %>
