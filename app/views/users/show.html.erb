@@ -1,15 +1,14 @@
 <% provide(:title, @user.name) %>
+
 <div class="container-fluid">
   <div class="row">
     <div class="col-md-12">
       <div class="row">
         <div class="col-md-3">
-
         <%= render 'navbar_user'%>
-
         </div>
         <div class="col-md-9">
-          <%= render 'photos/new' %>
+         <%= render 'photos/new' %>
           <% if !@user.photos.empty? %>
             <%= render 'photos/index' %>    
           <% end %>

@@ -1,93 +1,62 @@
   <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
 
-<div class="container-fluid">
-    <div id="custom_carousel" class="carousel slide" data-ride="carousel" data-interval= false>
-        <!-- Wrapper for slides -->
-        <div class="carousel-inner">
-            <div class="item active">
-                <div class="container-fluid">
-                    <div class="row">
-                        <div class="top  col-xs-12">
+<div class="container-fluid layout_album">
+	<div id="custom_carousel" class="carousel slide" data-ride="carousel" data-interval= false>
+		<!-- Wrapper for slides -->
+	<div class= "album_section">
+		<div class="carousel-inner">
+				<div class="item active">
+					<div class="container-fluid">
+						<div class="row">
+							<div class="top  col-xs-6 page-left">
+								 <div class= 'square_album'></div>
+								</div>
+								<div class="top  col-xs-6 page-right">
+								 <div class= 'square_album'></div>
+								</div>                       
+						</div>
+					</div>            
+				</div> 
+				<%5.times do |n|%>
+					<div class="item">
+						<div class="container-fluid">
+							<div class="row">
+								<div class="top  col-xs-6">
+								 <div class= 'square_album'></div>
+								</div>
+								<div class="top  col-xs-6">
+								 <div class= 'square_album'></div>
+								</div>
+							</div>
+						</div>            
+					</div>
+				<%end%>
+		</div>
+	</div>
+		<a data-slide="prev" href="#custom_carousel" class="izq carousel-control">‹</a>
+		<a data-slide="next" href="#custom_carousel" class="der carousel-control">›</a>
+		<!-- End Carousel Inner -->
+		<div class="col-xs-12">
+		<div class="row">
+			<div class="controls slider ui-widget-content col-xs-11">
+				<ul class="nav ui-widget-header">
 
+					<li data-target="#custom_carousel" data-slide-to="0" class="active"><a href="#"><img src="http://disecor.imaginacolombia.com/assets/mfNTNcc2OcD-1.jpg"><small>Slide One</small></a></li>
+					<li data-target="#custom_carousel" data-slide-to="1"><a href="#"><img src="http://disecor.imaginacolombia.com/assets/mfdaC7_IvMS-1.jpg"><small>Slide Two</small></a></li>
+					<li data-target="#custom_carousel" data-slide-to="2"><a href="#"><img src="http://disecor.imaginacolombia.com/assets/mfiaASNcDB7-1.jpg"><small>Slide Three</small></a></li>
+					<li data-target="#custom_carousel" data-slide-to="3"><a href="#"><img src="http://disecor.imaginacolombia.com/assets/mfNTNcc2OcD-1.jpg"><small>Slide Four</small></a></li>
+					<li data-target="#custom_carousel" data-slide-to="4"><a href="#"><img src="http://disecor.imaginacolombia.com/assets/mfdaC7_IvMS-1.jpg"><small>Slide Five</small></a></li>
+					<li data-target="#custom_carousel" data-slide-to="5"><a href="#"><img src="http://disecor.imaginacolombia.com/assets/mfiaASNcDB7-1.jpg"><small>Slide Six</small></a></li>			  
+				</ul>
+			<a data-slide="prev" href="#custom_carousel" class="izq carousel-control">‹</a>
+		<a data-slide="next" href="#custom_carousel" class="der carousel-control">›</a>
+			</div>
+			<div class="buttons_section col-xs-1">
 
-                        <img src="http://disecor.imaginacolombia.com/assets/mfNTNcc2OcD-1.jpg" class="img-responsive">
+				<a href="#" class="btn btn-sq-xs "> <i class="fa fa-user fa-1x"></i>+</a><br>
+				<a href="#" class="btn btn-sq-xs"><i class="fa fa-user fa-1x"></i>:)</a>
 
-                        
-
-                        </div>
-                        
-                    </div>
-                </div>            
-            </div> 
-            <div class="item">
-                <div class="container-fluid">
-                    <div class="row">
-                        <div class="top  col-xs-12"><img src="http://disecor.imaginacolombia.com/assets/mfdaC7_IvMS-1.jpg" class="img-responsive"></div>
-                    </div>
-                </div>            
-            </div> 
-            <div class="item">
-                <div class="container-fluid">
-                    <div class="row">
-                        <div class="top  col-xs-12"><img src="http://disecor.imaginacolombia.com/assets/mfiaASNcDB7-1.jpg" class="img-responsive"></div>                        
-                    </div>
-                </div>           
-            </div>
-         <div class="item">
-                <div class="container-fluid">
-                    <div class="row">
-                        <div class="top  col-xs-12"><img src="http://disecor.imaginacolombia.com/assets/mfNTNcc2OcD-1.jpg" class="img-responsive"></div>                       
-                    </div>
-                </div>            
-            </div> 
-            <div class="item">
-                <div class="container-fluid">
-                    <div class="row">
-                        <div class="top  col-xs-12"><img src="http://disecor.imaginacolombia.com/assets/mfdaC7_IvMS-1.jpg" class="img-responsive"></div>                      
-                    </div>
-                </div>            
-            </div> 
-            <div class="item">
-                <div class="container-fluid">
-                    <div class="row">
-                        <div class="top  col-xs-12"><img src="http://disecor.imaginacolombia.com/assets/mfiaASNcDB7-1.jpg" class="img-responsive"></div>                       
-                    </div>
-                </div>           
-            </div>
-             <div class="item">
-                <div class="container-fluid">
-                    <div class="row">
-                        <div class="top  col-xs-12"><img src="http://disecor.imaginacolombia.com/assets/mfiaASNcDB7-1.jpg" class="img-responsive"></div>                      
-                    </div>
-                </div>           
-            </div>
-                  <div class="item">
-                <div class="container-fluid">
-                    <div class="row">
-                        <div class="top  col-xs-12"><img src="http://disecor.imaginacolombia.com/assets/mfiaASNcDB7-1.jpg" class="img-responsive"></div>                     
-                    </div>
-                </div>           
-            </div>
-
-        <!-- End Item -->
-        </div>
-        <a data-slide="prev" href="#custom_carousel" class="izq carousel-control">‹</a>
-        <a data-slide="next" href="#custom_carousel" class="der carousel-control">›</a>
-        <!-- End Carousel Inner -->
-                <div class="controls draggable ui-widget-content col-xs-12">
-            <ul class="nav ui-widget-header">
-
-                <li data-target="#custom_carousel" data-slide-to="0" class="active"><a href="#"><img src="http://disecor.imaginacolombia.com/assets/mfNTNcc2OcD-1.jpg"><small>Slide One</small></a></li>
-                <li data-target="#custom_carousel" data-slide-to="1"><a href="#"><img src="http://disecor.imaginacolombia.com/assets/mfdaC7_IvMS-1.jpg"><small>Slide Two</small></a></li>
-                <li data-target="#custom_carousel" data-slide-to="2"><a href="#"><img src="http://disecor.imaginacolombia.com/assets/mfiaASNcDB7-1.jpg"><small>Slide Three</small></a></li>
-                <li data-target="#custom_carousel" data-slide-to="3"><a href="#"><img src="http://disecor.imaginacolombia.com/assets/mfNTNcc2OcD-1.jpg"><small>Slide Four</small></a></li>
-                <li data-target="#custom_carousel" data-slide-to="4"><a href="#"><img src="http://disecor.imaginacolombia.com/assets/mfdaC7_IvMS-1.jpg"><small>Slide Five</small></a></li>
-                <li data-target="#custom_carousel" data-slide-to="5"><a href="#"><img src="http://disecor.imaginacolombia.com/assets/mfiaASNcDB7-1.jpg"><small>Slide Six</small></a></li>
-                <li data-target="#custom_carousel" data-slide-to="6"><a href="#"><img src="http://disecor.imaginacolombia.com/assets/mfiaASNcDB7-1.jpg"><small>Slide Six</small></a></li>
-                <li data-target="#custom_carousel" data-slide-to="7"><a href="#"><img src="http://disecor.imaginacolombia.com/assets/mfiaASNcDB7-1.jpg"><small>Slide Six</small></a></li>
-              
-            </ul>
-        </div>
-    </div>
-    <!-- End Carousel -->
+			</div>
+			</div>
+		</div>
 </div>

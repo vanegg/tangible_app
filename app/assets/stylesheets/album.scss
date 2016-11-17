@@ -4,13 +4,15 @@
 
 #custom_carousel .item  .top {
     overflow:hidden;
+    min-height:300px;
     max-height:600px;
-    margin-bottom:15px;
+  /*  margin-bottom:15px;*/
+  background-color: #A4A4A4;
 }
 #custom_carousel .item {
     color:#000;
     background-color:#fff;
-    padding:20px 0;
+    /*padding:20px 0;*/
     overflow:hidden
 }
 #custom_carousel .item img{
@@ -34,7 +36,7 @@ height:auto
 /* Next button  */
 #custom_carousel .der 
 {
-       position:absolute;
+  position:absolute;
   right: -25px !important;
   top:40%;
   left:inherit;
@@ -49,7 +51,7 @@ height:auto
 #custom_carousel .controls{
 
     overflow:hidden;
-    padding:0;
+    padding:10px;
     margin:0;
     white-space: nowrap;
     /*text-align: center;*/
@@ -59,14 +61,14 @@ height:auto
 }
 #custom_carousel .controls .nav{
 
-    padding:0;
+    padding:10px;
     margin:0;
     white-space: nowrap;
     /*text-align: center;*/
     position: relative;
     background:#fff;
     width: auto;
-    border: 0;
+    border: 1 solid;
 }
 #custom_carousel .controls li {
     display: inline-block;
@@ -92,4 +94,44 @@ height:auto
     font-size:10px;
     margin-top:5px;
     font-weight:bold
+}
+.square_album {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  width: 100%;
+  padding-bottom: 100%;
+  background-color: white;
+
+}
+
+.carousel-inner, .item {
+  background-color: #A4A4A4;
+}
+
+.album_section {
+  padding: 10px;
+  background-color: #8D8D8D;
+}
+
+.layout_album {
+  background-color: #8D8D8D;
+}
+
+ .buttons_section {
+  text-align: center;
+  padding: 3px;
+  background-color: white;
+  height: 100px;
+}
+
+.btn-sq-xs {
+  vertical-align: center;
+  text-align: center;
+  /*background-color: white;*/
+  margin-top: 10px;
+}
+
+.btn {
+  font-size: 20px;
+
 }
