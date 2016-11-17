@@ -35,8 +35,6 @@ gem 'jbuilder', '~> 2.5'
 # Upload and edit pictures
 # gem 'carrierwave', github: 'carrierwaveuploader/carrierwave'
 gem 'carrierwave'
-gem 'mini_magick', '>= 4.3'
-gem 'rmagick', require =>"RMagick"
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
@@ -54,6 +52,7 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+  gem 'mini_magick', '>= 4.3'
 end
 
 group :test do
@@ -64,9 +63,10 @@ group :test do
 end
 
 group :production do
-	gem 'pg', '0.18.4'
+  gem 'pg', '0.18.4'
   gem 'fog'#, '~> 1.16'
   gem 'unf'
+  gem 'rmagick', :require => 'RMagick'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

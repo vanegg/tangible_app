@@ -3,7 +3,6 @@
 class PhotoUploader < CarrierWave::Uploader::Base
 
   # Include RMagick or MiniMagick support:
-  include CarrierWave::RMagick
   
   # if RbConfig::CONFIG["target_os"] =~ /mswin|mingw|cygwin/i
   #   include CarrierWave::MiniMagick
@@ -14,9 +13,11 @@ class PhotoUploader < CarrierWave::Uploader::Base
 
   # Choose what kind of storage to use for this uploader:
   if Rails.env.production?
+    include CarrierWave::RMagick
     storage :fog
   else
     storage :file
+    include CarrierWave::MiniMagick
   end
 
   # Override the directory where uploaded files will be stored.
