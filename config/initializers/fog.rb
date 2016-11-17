@@ -11,7 +11,8 @@ CarrierWave.configure do |config|
       :provider              => 'AWS',
       :aws_access_key_id     => ENV['S3_KEY'],
       :aws_secret_access_key => ENV['S3_SECRET'],
-      :region                => ENV['S3_REGION']
+      :region                => ENV['S3_REGION'],
+      :aws_signature_version => 2
     }
   else
     config.storage = :file
