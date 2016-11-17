@@ -360,7 +360,7 @@ DEPENDENCIES
   carrierwave
   coffee-rails (~> 4.2)
   faker (= 1.6.6)
-  fog (~> 1.16)
+  fog
   guard (= 2.13.0)
   guard-minitest (= 2.4.4)
   jbuilder (~> 2.5)

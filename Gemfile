@@ -36,6 +36,7 @@ gem 'jbuilder', '~> 2.5'
 # gem 'carrierwave', github: 'carrierwaveuploader/carrierwave'
 gem 'carrierwave'
 gem 'mini_magick', '>= 4.3'
+gem 'rmagick', require =>"RMagick"
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
@@ -64,7 +65,7 @@ end
 
 group :production do
 	gem 'pg', '0.18.4'
-  gem 'fog', '~> 1.16'
+  gem 'fog'#, '~> 1.16'
   gem 'unf'
 end
 
