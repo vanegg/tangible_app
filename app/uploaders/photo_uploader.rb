@@ -50,6 +50,9 @@ class PhotoUploader < CarrierWave::Uploader::Base
   #   # s3_access_policy :public
   # end
 
+  #original is automatically saved
+  #carrousel size
+  #largest size needed for pages
   version :thumb do
     process :resize_to_fit => [50, 50]
   end
@@ -63,7 +66,7 @@ class PhotoUploader < CarrierWave::Uploader::Base
   end
 
   version :small, :from_version => :medium do
-      process :resize_to_fit => [240, 180]
+    process :resize_to_fit => [240, 180]
   end
 
   # def crop
