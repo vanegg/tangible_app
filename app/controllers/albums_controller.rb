@@ -2,7 +2,7 @@ class AlbumsController < ApplicationController
 
   def new
     @album = Album.new
-   # render 'new2'
+    render '_album_carousel'
   end
 
   def create
