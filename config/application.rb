@@ -18,8 +18,5 @@ module SampleApp
         ENV[key.to_s] = value
       end if File.exists?(env_file)
     end
-    p "*"*50
-    p ENV["S3_KEY"]
-    p ENV["S3_SECRET"]
   end
 end

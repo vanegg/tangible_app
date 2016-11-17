@@ -25,7 +25,7 @@
 /spring/*.pid
 
 # Ignore AWS keys
-/config/aws.yaml
+/config/aws.yml
 
 # Ignore uploaded photos
 /public/uploads
