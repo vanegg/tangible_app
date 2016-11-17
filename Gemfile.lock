@@ -72,14 +72,10 @@ GEM
     faker (1.6.6)
       i18n (~> 0.5)
     ffi (1.9.14)
-    fog (1.24.0)
+    fog (1.21.0)
       fog-brightbox
-      fog-core (~> 1.23)
+      fog-core (~> 1.21, >= 1.21.1)
       fog-json
-      fog-radosgw (>= 0.0.2)
-      fog-sakuracloud (>= 0.0.4)
-      fog-softlayer
-      ipaddress (~> 0.5)
       nokogiri (~> 1.5, >= 1.5.11)
     fog-brightbox (0.11.0)
       fog-core (~> 1.22)
@@ -92,19 +88,6 @@ GEM
     fog-json (1.0.2)
       fog-core (~> 1.0)
       multi_json (~> 1.10)
-    fog-radosgw (0.0.5)
-      fog-core (>= 1.21.0)
-      fog-json
-      fog-xml (>= 0.0.1)
-    fog-sakuracloud (1.7.5)
-      fog-core
-      fog-json
-    fog-softlayer (1.1.4)
-      fog-core
-      fog-json
-    fog-xml (0.1.2)
-      fog-core
-      nokogiri (~> 1.5, >= 1.5.11)
     formatador (0.2.5)
     globalid (0.3.7)
       activesupport (>= 4.1.0)
@@ -123,7 +106,6 @@ GEM
       minitest (>= 3.0)
     i18n (0.7.0)
     inflecto (0.0.2)
-    ipaddress (0.8.3)
     jbuilder (2.6.0)
       activesupport (>= 3.0.0, < 5.1)
       multi_json (~> 1.2)
@@ -259,7 +241,7 @@ DEPENDENCIES
   carrierwave
   coffee-rails (~> 4.2)
   faker (= 1.6.6)
-  fog (= 1.24.00)
+  fog (= 1.21.00)
   guard (= 2.13.0)
   guard-minitest (= 2.4.4)
   jbuilder (~> 2.5)
