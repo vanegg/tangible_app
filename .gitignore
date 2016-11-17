@@ -24,8 +24,5 @@
 # Ignore Spring files.
 /spring/*.pid
 
-# Ignore AWS keys
-/config/aws.yml
-
 # Ignore uploaded photos
 /public/uploads
