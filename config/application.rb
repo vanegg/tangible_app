@@ -11,5 +11,15 @@ module SampleApp
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
+    # convert yaml archives into env variables
+    config.before_configuration do
+      env_file = File.join(Rails.root, 'config', 'aws.yml')
+      YAML.load(File.open(env_file)).each do |key, value|
+        ENV[key.to_s] = value
+      end if File.exists?(env_file)
+    end
+    p "*"*50
+    p ENV["S3_KEY"]
+    p ENV["S3_SECRET"]
   end
 end
