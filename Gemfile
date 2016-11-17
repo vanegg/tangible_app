@@ -30,7 +30,7 @@ gem 'jbuilder', '~> 2.5'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
-gem 'fog', '~> 1.16'
+# gem 'fog', '~> 1.16'
 
 # Upload and edit pictures
 # gem 'carrierwave', github: 'carrierwaveuploader/carrierwave'
@@ -64,7 +64,7 @@ end
 
 group :production do
 	gem 'pg', '0.18.4'
-  # gem 'fog', '~> 1.16'
+  gem 'fog', '~> 1.16'
   gem 'unf'
 end
 
