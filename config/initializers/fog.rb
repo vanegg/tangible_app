@@ -1,7 +1,7 @@
 # config/initializers/carrierwave.rb
 # require 'carrierwave/orm/activerecord'
 CarrierWave.configure do |config|
-  if Rails.env.production?
+  unless Rails.env.production?
     config.storage = :fog
     config.fog_credentials = {
       # In Heroku, follow http://devcenter.heroku.com/articles/config-vars
