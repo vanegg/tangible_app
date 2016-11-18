@@ -8,8 +8,8 @@ class AlbumsController < ApplicationController
       @album.pages << page
       page.save
     end
+    p "album/**/new"*5
     # render '_album_carousel'
-
   end
 
   def create
@@ -20,10 +20,15 @@ class AlbumsController < ApplicationController
     else
       flash[:error] = "Album could not be saved."
     end
+    p "album/create"*5
     redirect_to album_show_path(@album.id)
   end
 
-  def index 
+  def title
+    
+  end
+
+  def save_changes 
   end
 
   def edit

@@ -1,15 +1,18 @@
 <% provide(:title, 'New Album') %>
 
 <div class="container-fluid">
-  <div class="row">
-      <p>Welcome to Album Workspace - this is going to be a sub-header with options for the album</p>
+  <div class="row" id="album-title">
+      <%= form_for [current_user, @album] do |f| %>
+      <%= f.label :title %>
+      <%= f.text_field :title, class: 'form-control' %>
+      <%= f.submit yield(:button_text), class: "btn btn-primary" %>
+      <% end %>
   </div>
   <div class="row">
     <div class="col-md-12">
       <div class="row">
-        <div class="col-md-1">
+        <div class="col-md-1" id="menu">
           <div class="btn-group btn-group-vertical btn-group-sm">
-            <div style="left: 60px; z-index: 1000; top: 27px" class="triangle"></div>
             <button class="btn btn-default" type="button">
               <em class="glyphicon glyphicon-picture"></em>
             </button> 
@@ -22,11 +25,14 @@
             <button class="btn btn-default" type="button">
               <em class="glyphicon glyphicon-duplicate"></em>
             </button>
+            <div class="arrow-right"></div>
           </div>
         </div>
         <div class="col-md-2">
           <p>Mis Photos:</p>
-          <%= render 'photos/index' %> 
+          <div class="pre-scrollable">
+            <%= render 'photos/index' %> 
+          </div>
         </div>
         <div class="album- carousel col-md-9">
           <%= render 'albums/album_carousel' %>

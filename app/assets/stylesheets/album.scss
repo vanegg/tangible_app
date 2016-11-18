@@ -3,25 +3,24 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 #custom_carousel .item  .top {
-    overflow:hidden;
-    min-height:300px;
-    max-height:600px;
+  overflow:hidden;
+  min-height:300px;
+  max-height:600px;
   /*  margin-bottom:15px;*/
   background-color: #A4A4A4;
 }
 #custom_carousel .item {
-    color:#000;
-    background-color:#fff;
-    /*padding:20px 0;*/
-    overflow:hidden
+  color:#000;
+  background-color:#fff;
+  /*padding:20px 0;*/
+  overflow:hidden
 }
 #custom_carousel .item img{
-width:100%;
-height:auto
+  width:100%;
+  height:auto
 }
 
-#custom_carousel .izq 
-{
+#custom_carousel .izq {
   position:absolute;
   left: -25px;
   top:40%;
@@ -34,8 +33,7 @@ height:auto
   margin-top: 30px;
 }
 /* Next button  */
-#custom_carousel .der 
-{
+#custom_carousel .der {
   position:absolute;
   right: -25px !important;
   top:40%;
@@ -48,52 +46,50 @@ height:auto
   width : 40px;
   margin-top: 30px;
 }
-#custom_carousel .controls{
-
-    overflow:hidden;
-    padding:10px;
-    margin:0;
-    white-space: nowrap;
-    text-align: center;
-    position: relative;
-    background:#fff;
-    border:0;
+#custom_carousel .controls {
+  overflow:hidden;
+  padding:10px;
+  margin:0;
+  white-space: nowrap;
+  text-align: center;
+  position: relative;
+  background:#fff;
+  border:0;
 }
-#custom_carousel .controls .nav{
-
-    padding:10px;
-    margin:0;
-    white-space: nowrap;
-    text-align: center;
-    position: relative;
-    background:#fff;
-    width: auto;
-    border: 1 solid;
+#custom_carousel .controls .nav {
+  padding:10px;
+  margin:0;
+  white-space: nowrap;
+  text-align: center;
+  position: relative;
+  background:#fff;
+  width: auto;
+  border: 1 solid;
 }
 #custom_carousel .controls li {
-    display: inline-block;
-    max-width: 100px;
-    height: 90px;
-    opacity:.5;
+  display: inline-block;
+  max-width: 100px;
+  height: 90px;
+  opacity:.5;
 }
-#custom_carousel .controls li a{
-    padding:0;
+#custom_carousel .controls li a {
+  padding:0;
 }
-#custom_carousel .controls li img{
-width:100%;
-height:auto
+#custom_carousel .controls li img {
+  width:100%;
+  height:auto
 }
 
 #custom_carousel .controls li.active {
-    background-color:#fff;
-    opacity:1;
+  background-color:#fff;
+  opacity:1;
 }
 #custom_carousel .controls a small {
-    overflow:hidden;
-    display:block;
-    font-size:10px;
-    margin-top:5px;
-    font-weight:bold
+  overflow:hidden;
+  display:block;
+  font-size:10px;
+  margin-top:5px;
+  font-weight:bold
 }
 .square_album {
   margin-top: 10px;
@@ -103,7 +99,6 @@ height:auto
   background-color: white;
 
 }
-
 .carousel-inner, .item {
   background-color: #A4A4A4;
 }
@@ -127,7 +122,6 @@ height:auto
 .btn-sq-xs {
   vertical-align: center;
   text-align: center;
-  /*background-color: white;*/
   margin-top: 10px;
 }
 
@@ -139,9 +133,40 @@ height:auto
 #current_page {
   display: none;
   }
+
 #menu {
-  background-color: #A4A4A4;
+  background-color: #222;
   padding: 0px;
+  text-align: center;
   width: 50px;
-  height: 900px;
+  height: 600px;
 }
+
+#menu button {
+  background-color: #222;
+  border: none;
+  color: #9d9d9d;
+}
+
+#menu button:hover {
+  color: #fff;
+}
+
+#menu button:focus {
+  outline: none;
+  color: yellow;
+}
+
+.arrow-right {
+  width: 0; 
+  height: 0;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  border-left: 10px solid #222;
+  position: relative;
+  left: 41px;
+  z-index: 1000;
+  display: block;
+}
+
+
