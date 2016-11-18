@@ -59,19 +59,26 @@
 				<%end%>
 		</div>
 	</div>
+
+
+	<p id='num_album'><%=@album.id%></p>
+
+
 	<script type="text/javascript">
 		$(document).ready(function(ev){
 
 			$( "body" ).on( "click", ".carousel-control", function() {
 				console.log($( this ).attr('id'));
 	  		page = $('.item.active').children().children().children().children().first().attr('id');
-				$('#' + $( this ).attr('id')).attr('href','/newpage?page=' + page + "&type=" + $( this ).attr('id'));
+	  		album = $('#num_album').text();
+				$('#' + $( this ).attr('id')).attr('href','/newpage?album=' + album + '&page=' + page + "&type=" + $( this ).attr('id'));
 			});
 
 		});
 	</script>
 
 		<%= link_to "‹","", remote: true, class: "izq carousel-control", id:'prev' %>
+
 		<%= link_to "›","", remote: true, class: "der carousel-control", id:'next' %>
 
 		<div class="col-xs-12">
