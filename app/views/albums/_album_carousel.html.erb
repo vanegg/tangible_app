@@ -18,7 +18,7 @@
 					</div>
 				</div>
 				<% i = 3%>
-				<%(@album.pages.length - 1).times do |n|%>
+				<%(@album.pages.length / 2 - 1).times do |n|%>
 					<div class="item">
 						<div class="container-fluid">
 							<div class="row">
@@ -62,7 +62,7 @@
 			<div class="controls draggable ui-widget-content col-xs-11">
 				<ul class="nav ui-widget-header">
 					<%i = 1%>
-					<%@album.pages.length.times do |n|%>
+					<%(@album.pages.length / 2).times do |n|%>
 					<li data-target="#custom_carousel" data-slide-to="<%=n%>" class="active"><a href="#">
 					<%=image_tag("void_layout.png", alt: "layout_0")%><small>Página <%=i%> - <%=i + 1%></small></a></li>
 					<%i += 2%>
