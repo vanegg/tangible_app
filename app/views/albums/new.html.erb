@@ -2,11 +2,12 @@
 
 <div class="container-fluid">
   <div class="row" id="album-title">
+    <div class="col-md-3">
       <%= form_for [current_user, @album] do |f| %>
-      <%= f.label :title %>
-      <%= f.text_field :title, class: 'form-control' %>
-      <%= f.submit yield(:button_text), class: "btn btn-primary" %>
+      <%= f.text_field :title, placeholder: "Untitled Album" %>
+      <%= f.submit 'Save title', class: "btn btn-sm btn-default" %>
       <% end %>
+    </div>
   </div>
   <div class="row">
     <div class="col-md-12">
