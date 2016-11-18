@@ -22,7 +22,7 @@ height:auto
 
 #custom_carousel .izq 
 {
-    position:absolute;
+  position:absolute;
   left: -25px;
   top:40%;
   background-image: none;
@@ -134,4 +134,8 @@ height:auto
 .btn {
   font-size: 20px;
 
+}
+
+#current_page {
+  display: none;
 }

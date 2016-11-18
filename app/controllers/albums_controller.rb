@@ -2,6 +2,11 @@ class AlbumsController < ApplicationController
 
   def new
     @album = Album.new
+    5.times do |n|
+      page = Page.new(page_num: n)
+      @album.pages << page
+      page.save
+    end
     render '_album_carousel'
   end
 

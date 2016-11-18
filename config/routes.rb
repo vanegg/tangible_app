@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'pages/newpage'
+
   get 'password_resets/new'
 
   get 'password_resets/edit'
@@ -14,6 +16,8 @@ Rails.application.routes.draw do
   get    '/login', to: 'sessions#new'
   post   '/login', to: 'sessions#create'
   delete '/logout',to: 'sessions#destroy'
+
+  get '/newpage', to: 'pages#newpage'
 
   # resources :users
   resources :users do

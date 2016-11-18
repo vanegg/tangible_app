@@ -31,7 +31,7 @@ ActiveRecord::Schema.define(version: 20161114195307) do
   end
 
   create_table "pages", force: :cascade do |t|
-    t.integer  "layout",     null: false
+    t.integer  "layout"
     t.integer  "page_num",   null: false
     t.integer  "album_id"
     t.datetime "created_at", null: false

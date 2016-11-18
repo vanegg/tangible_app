@@ -9,43 +9,50 @@
 					<div class="container-fluid">
 						<div class="row">
 							<div class="top  col-xs-6 page-left">
-								 <div class= 'square_album'></div>
-								</div>
-								<div class="top  col-xs-6 page-right">
-								 <div class= 'square_album'></div>
-								</div>                       
+								 <div id= '1' class= 'square_album left'></div>
+							</div>
+							<div class="top  col-xs-6 page-right">
+								<div id= '2' class= 'square_album right'></div>
+							</div>
 						</div>
-					</div>            
-				</div> 
-				<%4.times do |n|%>
+					</div>
+				</div>
+				<% i = 3%>
+				<%(@album.pages.length - 1).times do |n|%>
 					<div class="item">
 						<div class="container-fluid">
 							<div class="row">
 								<div class="top  col-xs-6">
-								 <div class= 'square_album'></div>
+								 <div id= '<%= i%>' class= 'square_album left'></div>
 								</div>
 								<div class="top  col-xs-6">
-								 <div class= 'square_album'></div>
+								 <div id= '<%= i + 1%>' class= 'square_album right'></div>
 								</div>
 							</div>
 						</div>            
 					</div>
+					<% i += 2%>
 				<%end%>
 		</div>
 	</div>
-		<a data-slide="prev" href="#custom_carousel" class="izq carousel-control">‹</a>
-		<a data-slide="next" href="#custom_carousel" class="der carousel-control">›</a>
+	<script type="text/javascript">console.log($('.item.active').children().children().children().children().first().attr('id'))</script>
+		<p id="current_page">1</p>
+		<%= link_to "‹", newpage_path(type:'prev'), remote: true, class: "izq carousel-control"%>
+		<%= link_to "›",  newpage_path(type:'next'), remote: true, class: "der carousel-control"%>
+	<!-- 	<a data-slide="prev" href="#custom_carousel" class="izq carousel-control">‹</a>
+		<a data-slide="next"  href="#custom_carousel" class="der carousel-control">›</a> -->
 		<!-- End Carousel Inner -->
 		<div class="col-xs-12">
 		<div class="row">
 			<div class="controls draggable ui-widget-content col-xs-11">
 				<ul class="nav ui-widget-header">
 					<%i = 1%>
-					<%5.times do |n|%>
+					<%@album.pages.length.times do |n|%>
 					<li data-target="#custom_carousel" data-slide-to="<%=n%>" class="active"><a href="#">
 					<%=image_tag("void_layout.png", alt: "layout_0")%><small>Página <%=i%> - <%=i + 1%></small></a></li>
 					<%i += 2%>
-					<%end%>			  
+					<%end%>		
+					<div class="pages_section"></div>	  
 				</ul>
 			</div>
 			<div class="buttons_section col-xs-1">
