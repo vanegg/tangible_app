@@ -17,7 +17,7 @@
 						</div>
 					</div>            
 				</div> 
-				<%5.times do |n|%>
+				<%4.times do |n|%>
 					<div class="item">
 						<div class="container-fluid">
 							<div class="row">
@@ -38,18 +38,15 @@
 		<!-- End Carousel Inner -->
 		<div class="col-xs-12">
 		<div class="row">
-			<div class="controls slider ui-widget-content col-xs-11">
+			<div class="controls draggable ui-widget-content col-xs-11">
 				<ul class="nav ui-widget-header">
-
-					<li data-target="#custom_carousel" data-slide-to="0" class="active"><a href="#"><img src="http://disecor.imaginacolombia.com/assets/mfNTNcc2OcD-1.jpg"><small>Slide One</small></a></li>
-					<li data-target="#custom_carousel" data-slide-to="1"><a href="#"><img src="http://disecor.imaginacolombia.com/assets/mfdaC7_IvMS-1.jpg"><small>Slide Two</small></a></li>
-					<li data-target="#custom_carousel" data-slide-to="2"><a href="#"><img src="http://disecor.imaginacolombia.com/assets/mfiaASNcDB7-1.jpg"><small>Slide Three</small></a></li>
-					<li data-target="#custom_carousel" data-slide-to="3"><a href="#"><img src="http://disecor.imaginacolombia.com/assets/mfNTNcc2OcD-1.jpg"><small>Slide Four</small></a></li>
-					<li data-target="#custom_carousel" data-slide-to="4"><a href="#"><img src="http://disecor.imaginacolombia.com/assets/mfdaC7_IvMS-1.jpg"><small>Slide Five</small></a></li>
-					<li data-target="#custom_carousel" data-slide-to="5"><a href="#"><img src="http://disecor.imaginacolombia.com/assets/mfiaASNcDB7-1.jpg"><small>Slide Six</small></a></li>			  
+					<%i = 1%>
+					<%5.times do |n|%>
+					<li data-target="#custom_carousel" data-slide-to="<%=n%>" class="active"><a href="#">
+					<%=image_tag("void_layout.png", alt: "layout_0")%><small>Página <%=i%> - <%=i + 1%></small></a></li>
+					<%i += 2%>
+					<%end%>			  
 				</ul>
-			<a data-slide="prev" href="#custom_carousel" class="izq carousel-control">‹</a>
-		<a data-slide="next" href="#custom_carousel" class="der carousel-control">›</a>
 			</div>
 			<div class="buttons_section col-xs-1">
 
