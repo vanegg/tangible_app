@@ -23,7 +23,7 @@ User.find(1).albums << album
 album.save
 
 3.times do |n|
-  page = Page.new(layout: 1, page_num: n + 1)
+  page = Page.new(layout: 0, page_num: n + 1)
   album.pages << page
 
   5.times do |n|
