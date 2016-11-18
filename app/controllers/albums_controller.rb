@@ -2,16 +2,17 @@ class AlbumsController < ApplicationController
 
   def new
     @album = Album.new
+
     5.times do |n|
       page = Page.new(page_num: n)
       @album.pages << page
       page.save
     end
-    render '_album_carousel'
+    # render '_album_carousel'
+
   end
 
   def create
-
     @album = Album.new(title: params[:title])
     if @album.save
       current_user.albums << @album
@@ -23,7 +24,6 @@ class AlbumsController < ApplicationController
   end
 
   def index 
-   
   end
 
 end
