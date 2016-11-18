@@ -30,8 +30,6 @@ gem 'jbuilder', '~> 2.5'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
-# gem 'fog', '~> 1.16'
-
 # Upload and edit pictures
 # gem 'carrierwave', github: 'carrierwaveuploader/carrierwave'
 gem 'carrierwave'

@@ -2,11 +2,10 @@ class AlbumsController < ApplicationController
 
   def new
     @album = Album.new
-    render '_album_carousel'
+    # render '_album_carousel'
   end
 
   def create
-
     @album = Album.new(title: params[:title])
     if @album.save
       current_user.albums << @album
@@ -18,7 +17,6 @@ class AlbumsController < ApplicationController
   end
 
   def index 
-   
   end
 
 end

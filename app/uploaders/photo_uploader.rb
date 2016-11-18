@@ -54,20 +54,20 @@ class PhotoUploader < CarrierWave::Uploader::Base
   #carrousel size
   #largest size needed for pages
   version :thumb do
-    process :resize_to_fit => [50, 50]
+    process :resize_to_fill => [100, 75]
   end
 
   version :large do
-    process :resize_to_fit => [1024, 768]
+    process :resize_to_fill => [1024, 768]
   end
 
-  version :medium, :from_version => :large do
-    process :resize_to_fill => [600, 450]
-  end
+  # version :medium, :from_version => :large do
+  #   process :resize_to_fill => [600, 450]
+  # end
 
-  version :small, :from_version => :medium do
-    process :resize_to_fit => [240, 180]
-  end
+  # version :small, :from_version => :medium do
+  #   process :resize_to_fill => [240, 180]
+  # end
 
   # def crop
   #   if model.crop_x.present?

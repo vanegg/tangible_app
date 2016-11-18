@@ -1,19 +1,39 @@
 <% provide(:title, 'New Album') %>
-<div class="row">
-    <p>Welcome to Album Workspace - this is going to be a sub-header with options for the album</p>
-</div>
-<div class="row">
-  <div class="col-md-3">
-    <p>Your photos:</p>
-    <%= render 'photos/index' %>  
+
+<div class="container-fluid">
+  <div class="row">
+      <p>Welcome to Album Workspace - this is going to be a sub-header with options for the album</p>
   </div>
-  <div class="col-md-9">
-    <p>Each Page can be created and edited here </p>
-    <br>
-    <p>Page 1</p>
-    <p>Page 2</p>
+  <div class="row">
+    <div class="col-md-12">
+      <div class="row">
+        <div class="col-md-1">
+          <div class="btn-group btn-group-vertical btn-group-sm">
+            <div style="left: 60px; z-index: 1000; top: 27px" class="triangle"></div>
+            <button class="btn btn-default" type="button">
+              <em class="glyphicon glyphicon-picture"></em>
+            </button> 
+            <button class="btn btn-default" type="button">
+              <em class="glyphicon glyphicon-fullscreen"></em>
+            </button> 
+            <button class="btn btn-default" type="button">
+              <em class="glyphicon glyphicon-paperclip"></em>
+            </button> 
+            <button class="btn btn-default" type="button">
+              <em class="glyphicon glyphicon-duplicate"></em>
+            </button>
+          </div>
+        </div>
+        <div class="col-md-2">
+          <p>Mis Photos:</p>
+          <%= render 'photos/index' %> 
+        </div>
+        <div class="album- carousel col-md-9">
+          <%= render 'albums/album_carousel' %>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
-<div class="row">
-  <p>Layouts will go along here: -----------> </p>
-</div>
+
+
