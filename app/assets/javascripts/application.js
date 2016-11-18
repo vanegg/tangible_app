@@ -28,17 +28,17 @@ $(document).ready(function(ev){
       $('#custom_carousel .controls li.active').removeClass('active');
       $('#custom_carousel .controls li:eq('+$(evt.relatedTarget).index()+')').addClass('active');
     })
-    $('.nav').draggable({ 
-        axis: "x",
-         stop: function() {
-            var ml = parseInt($(this).css('left'));
-            if(ml>0)
-            $(this).animate({left:"0px"});
-                if(ml<leftRight)
-                    $(this).animate({left:leftRight+"px"});
+    // $('.nav').draggable({ 
+    //     axis: "x",
+    //      stop: function() {
+    //         var ml = parseInt($(this).css('left'));
+    //         if(ml>0)
+    //         $(this).animate({left:"0px"});
+    //             if(ml<leftRight)
+    //                 $(this).animate({left:leftRight+"px"});
                     
-        }
+    //     }
       
-    });
+    // });
 
 });

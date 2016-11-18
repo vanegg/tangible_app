@@ -31,4 +31,7 @@ class AlbumsController < ApplicationController
   def save_changes 
   end
 
+  def edit
+  end
+
 end

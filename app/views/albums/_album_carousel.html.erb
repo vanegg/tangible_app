@@ -35,13 +35,21 @@
 				<%end%>
 		</div>
 	</div>
-	<script type="text/javascript">console.log($('.item.active').children().children().children().children().first().attr('id'))</script>
+	<script type="text/javascript">
+		$(document).ready(function(ev){
+			page = $('.item.active').children().children().children().children().first().attr('id');
+			$('#prev').attr('href', 'newpage/?page=' + page + "&type=prev");
+		});
+	</script>
+
 		<p id="current_page">1</p>
-		<%= link_to "‹", newpage_path(type:'prev'), remote: true, class: "izq carousel-control"%>
-		<%= link_to "›",  newpage_path(type:'next'), remote: true, class: "der carousel-control"%>
-	<!-- 	<a data-slide="prev" href="#custom_carousel" class="izq carousel-control">‹</a>
-		<a data-slide="next"  href="#custom_carousel" class="der carousel-control">›</a> -->
-		<!-- End Carousel Inner -->
+
+		<%= link_to "‹", "", remote: true, class: "izq carousel-control", id:'prev' %>
+
+
+		<!-- <a data-slide="prev" href="#custom_carousel" class="izq carousel-control">‹</a> -->
+		<a id="right-btn" data-slide="next"  href="#custom_carousel" class="der carousel-control">›</a>
+
 		<div class="col-xs-12">
 		<div class="row">
 			<div class="controls draggable ui-widget-content col-xs-11">
