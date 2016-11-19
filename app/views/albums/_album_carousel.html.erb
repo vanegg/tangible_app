@@ -1,71 +1,83 @@
-  <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
-
-<div class="container-fluid layout_album">
-	<div id="custom_carousel" class="carousel slide" data-ride="carousel" data-interval= false>
-		<!-- Wrapper for slides -->
-		<div class= "album_section">
-			<div class="carousel-inner">
-				<div class="item active">
-					<div class="container-fluid">
-						<div class="row">
-							<div class="top  col-xs-6 page-left">
-								<div class= 'square_album'>
-									<%= render 'pages/select_layout'%>
-								</div>
-							</div>
-							<div class="top  col-xs-6 page-right">
-								<div class= 'square_album'>
-									<%= render 'pages/select_layout'%>
-								</div>
-							</div>                       
-						</div>
-					</div>
-				</div>
-				<% i = 3%>
-				<%(@album.pages.length / 2 - 1).times do |n|%>
-					<div class="item">
-						<div class="container-fluid">
-							<div class="row">
-								<div class="top  col-xs-6">
-									<div class= 'square_album'>
-										<%#= render 'pages/select_layout'%>
-									</div>
-								</div>
-								<div class="top  col-xs-6">
-									<div class= 'square_album'>
-										<%#= render 'pages/select_layout'%>
-									</div>
-								</div>
-							</div>
-						</div>            
-					</div>
-				<%end%>
-			</div>
-		</div>
-		<a data-slide="prev" href="#custom_carousel" class="izq carousel-control">‹</a>
-		<a data-slide="next" href="#custom_carousel" class="der carousel-control">›</a>
-		<!-- End Carousel Inner -->
-		<div class="col-xs-12">
-			<div class="row">
-				<div class="controls draggable ui-widget-content col-xs-11">
-					<ul class="nav ui-widget-header">
-						<%i = 1%>
-						<%(@album.pages.length / 2).times do |n|%>
-						<li data-target="#custom_carousel" data-slide-to="<%=n%>" class="active"><a href="#">
-						<%=image_tag("void_layout.png", alt: "layout_0")%><small>Página <%=i%> - <%=i + 1%></small></a></li>
-						<%i += 2%>
-						<%end%>			  
-					</ul>
-				</div>
-				<div class="buttons_section col-xs-1">
-
-					<!-- <a href="#" class="btn btn-sq-xs "> <i class="fa fa-user fa-1x"></i>+</a><br> -->
-					<!-- <a href="#" class="btn btn-sq-xs"><i class="fa fa-user fa-1x"></i>:)</a> -->
-					<a href="#" class="btn btn-xs"><span class="glyphicon glyphicon-plus"></span> Add page </a>
-					<a href="#" class="btn btn-xs"><span class="glyphicon glyphicon-ok"></span> Done </a>
-
-				</div>
-			</div>
-		</div>
-	</div>
+<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script><div class="container-fluid layout_album">
+    <div id="custom_carousel" class="carousel slide" data-ride="carousel" data-interval='false'>
+        <!-- Wrapper for slides -->
+    <div class= "album_section">
+        <div class="carousel-inner">
+                <div class="item active">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="top  col-xs-6 page-left">
+                                <div id= '1' class= 'square_album left'>
+                                    <ul>
+                                        <li>Layout 1</li>
+                                        <li>Layout 2</li>
+                                        <li>Layout 3</li>
+                                    </ul>
+                              </div>
+                            </div>
+                            <div class="top  col-xs-6 page-right">
+                                <div id= '2' class= 'square_album right'>
+                                    <ul>
+                                        <li>Layout 1</li>
+                                        <li>Layout 2</li>
+                                        <li>Layout 3</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <% i = 3%>
+                <%(@album.pages.length / 2 - 1).times do |n|%>
+                    <div class="item">
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="top  col-xs-6">
+                                 <div id= '<%= i%>' class= 'square_album left'>
+                                    <ul>
+                                        <li>Layout 1</li>
+                                        <li>Layout 2</li>
+                                        <li>Layout 3</li>
+                                    </ul>
+                                 </div>
+                                </div>
+                                <div class="top  col-xs-6">
+                                 <div id= '<%= i + 1%>' class= 'square_album right'>
+                                    <ul>
+                                        <li>Layout 1</li>
+                                        <li>Layout 2</li>
+                                        <li>Layout 3</li>
+                                    </ul>
+                                 </div>
+                                </div>
+                            </div>
+                        </div>            
+                    </div>
+                    <% i += 2%>
+                <%end%>
+        </div>
+    </div>    <p id='num_album'><%=@album.id%></p>    <script type="text/javascript">
+        $(document).ready(function(ev){            $( "body" ).on( "click", ".carousel-control", function() {
+                console.log($( this ).attr('id'));
+              page = $('.item.active').children().children().children().children().first().attr('id');
+              album = $('#num_album').text();
+                $('#' + $( this ).attr('id')).attr('href','/newpage?album=' + album + '&page=' + page + "&type=" + $( this ).attr('id'));
+            });        });
+    </script>        <%= link_to "‹","", remote: true, class: "izq carousel-control", id:'prev' %>        <%= link_to "›","", remote: true, class: "der carousel-control", id:'next' %>        <div class="col-xs-12">
+        <div class="row">
+            <div class="controls draggable ui-widget-content col-xs-11">
+                <ul class="nav ui-widget-header">
+                    <%i = 1%>
+                    <%(@album.pages.length / 2).times do |n|%>
+                    <li data-target="#custom_carousel" data-slide-to="<%=n%>" class="active"><a href="#">
+                    <%=image_tag("void_layout.png", alt: "layout_0")%><small>Página <%=i%> - <%=i + 1%></small></a></li>
+                    <%i += 2%>
+                    <%end%>        
+                    <div class="pages_section"></div>      
+                </ul>
+            </div>
+            <div class="buttons_section col-xs-1">                <a href="#" class="btn btn-xs"><span class="glyphicon glyphicon-plus"></span> Add page </a>
+                <a href="#" class="btn btn-xs"><span class="glyphicon glyphicon-ok"></span> Done </a>            </div>
+            </div>
+        </div>
 </div>
