@@ -10,19 +10,17 @@ class PagesController < ApplicationController
   			p "Estas en el final del album"
   			return
   		end
-  		current_page = Page.where(page_num: current_page_id, album_id: album.id)
-  		@page_left = Page.where(page_num: current_page_id - 2, album_id: album.id)
-  		@page_right = Page.where(page_num: current_page_id - 1, album_id: album.id)
+  		@page_left = Page.where(page_num: current_page_id - 2, album_id: @album.id).first
+  		@page_right = Page.where(page_num: current_page_id - 1, album_id: @album.id).first
 
   	elsif type == 'next'
   		current_page_id = params[:page].to_i + 1
-  		if current_page_id == album.pages.length
+  		if current_page_id == @album.pages.length
   			p "Estas en el final del album"
   			return
   		end
-  		current_page = Page.where(page_num: current_page_id, album_id: album.id)
-  		p @page_left = Page.where(page_num: current_page_id + 1, album_id: album.id)
-  		p @page_right = Page.where(page_num: current_page_id + 2, album_id: album.id)
+  		p @page_left = Page.where(page_num: current_page_id + 1, album_id: @album.id).first
+  		p @page_right = Page.where(page_num: current_page_id + 2, album_id: @album.id).first
   	end
     p '*' * 50
     p @page_left.layout

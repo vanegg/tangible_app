@@ -1,7 +1,7 @@
-<!-- <ul class="frames"> -->
-  <% current_user.photos.reverse.each do |photo| %>
-      <!-- <li> -->
-        <img src="<%= photo.photo_url(:thumb) %>">
-      <!-- </li> -->
-  <% end %>
-<!-- </ul> -->
+<div class="photoPile">
+	<% current_user.photos.reverse.each do |photo| %>
+		<div>			
+	  	<img class="draggable" id="<%= photo.photo_url(:large)%>" src="<%= photo.photo_url(:thumb) %>">
+		</div>
+	<% end %>
+</div>
