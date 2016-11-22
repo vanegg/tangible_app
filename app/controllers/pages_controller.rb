@@ -25,4 +25,10 @@ class PagesController < ApplicationController
     p '*' * 50
     p @page_left.layout
   end
+
+  def updatelayout
+    page = Page.where(page_num: params[:page_num], album_id: params[:album]).first
+    page.update_attribute(:layout, params[:layout])
+    page.save
+  end
 end
