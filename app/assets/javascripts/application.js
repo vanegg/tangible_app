@@ -42,3 +42,20 @@ $(document).ready(function(ev){
     // });
 
 });
+
+function doDraggable(selector) {
+    $(selector).draggable({
+       containment: '#content',
+       stack: '.photoPile div',
+       cursor: 'move',
+       helper: "clone"
+    });
+};
+
+function doDroppable(selector){
+     $(selector).droppable( {
+      // accept: '.photoPile div',
+      hoverClass: 'hovered',
+      drop: handleDrop
+    }); 
+};
