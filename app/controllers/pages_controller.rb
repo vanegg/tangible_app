@@ -27,5 +27,9 @@ class PagesController < ApplicationController
 
   end
 
-
+  def currentpage
+    p "current_page/" * 5
+    p params
+    p params.keys
+  end
 end
