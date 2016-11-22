@@ -21,10 +21,11 @@ class PagesController < ApplicationController
   			return
   		end
   		current_page = Page.where(page_num: current_page_id, album_id: album.id)
-  		@page_left = Page.where(page_num: current_page_id + 1, album_id: album.id)
-  		@page_right = Page.where(page_num: current_page_id + 2, album_id: album.id)
+  		p @page_left = Page.where(page_num: current_page_id + 1, album_id: album.id)
+  		p @page_right = Page.where(page_num: current_page_id + 2, album_id: album.id)
   	end
-
+    p '*' * 50
+    p @page_left.layout
   end
 
   def currentpage

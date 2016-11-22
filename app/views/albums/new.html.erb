@@ -3,10 +3,7 @@
 <div class="container-fluid">
   <div class="row" id="album-title">
     <div class="col-md-3">
-      <%= form_for [current_user, @album] do |f| %>
-      <%= f.text_field :title, placeholder: "Untitled Album" %>
-      <%= f.submit 'Save title', class: "btn btn-sm btn-default" %>
-      <% end %>
+     
     </div>
   </div>
   <div class="row">
@@ -36,6 +33,10 @@
           </div>
         </div>
         <div class="album- carousel col-md-9">
+         <%= form_for [current_user, @album] do |f| %>
+      <%= f.text_field :title, placeholder: "Untitled Album" %>
+      <%= f.submit 'Save title', class: "btn btn-sm btn-default" %>
+      <% end %>
           <%= render 'albums/album_carousel' %>
         </div>
       </div>
