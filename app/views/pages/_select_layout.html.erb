@@ -1,41 +1,6 @@
-<script type="text/javascript">
-  $(document).ready(function(){
-    $('.select-layout li').on('click', function(){
-      album = 1;
-      layout = $(this).index() + 1;
-      page_id = $(this).parent().parent().attr('id');
-      $(this).parent().replaceWith('<div>HIII</div>');
-      console.log("id: " + page_id + ", layout: " + layout)
-      $('#' + $( this ).attr('id')).attr('href','/newpage?album=' + album + '&page=' + page_id + "&layout=" + layout);
-    });
-  });
-</script>
-
 <ul class='select-layout'>
   <li><%= link_to 'Layout1', '', remote: true, id: "layout1" %></li>
   <li><%= link_to 'Layout2', '', remote: true, id: "layout2" %></li>
   <li><%= link_to 'Layout3', '', remote: true, id: "layout3" %></li>
 </ul>
-
-<!-- <div class="container-fluid"> -->
-<!--   <div class="row">
-    <div class="col-md-12">
-      <div class="col-md-4">
-        <%#= image_tag("ph1.jpg") %>
-      </div>
-      <div class="col-md-4">
-        <%#= image_tag("ph2.jpg") %>
-      </div>
-      <div class="col-md-4">
-        <%#= image_tag("ph3.jpg") %>
-      </div>
-    </div>
-  </div> -->
-<!-- </div> -->
-
-<!-- <div class="row">
-  <%#= image_tag("http://lorempixel.com/140/140/") %>
-  <%#= image_tag("http://lorempixel.com/140/140/") %>
-  <%#= image_tag("http://lorempixel.com/140/140/") %>
-</div>
 

@@ -13,11 +13,16 @@
 						<div class="row">
 							<div class="top  col-xs-6 page-left">
 								<div id= '1' class= 'square_album left'>
-
-									<!-- render de dos fotos -->
-									 <%= render "pages/layout3" %> 
-						
-
+									<% lay = @album.pages.first.layout %>
+									<% if lay == 0 %>
+										<%= render "pages/select_layout" %> 
+									<% elsif lay == 1 %>
+										<%= render "pages/layout1" %> 
+									<% elsif lay == 2 %>
+										<%= render "pages/layout2" %> 
+									<% elsif lay == 3 %>
+										<%= render "pages/layout3" %> 
+									<% end %>
 								</div>
 							</div>
 							<div class="top  col-xs-6 page-right">
@@ -25,7 +30,7 @@
 
 
 								<!-- render de una foto -->
-								 <%= render "pages/layout1" %> 
+								<%= render "pages/select_layout" %> 
 									
 								</div>
 							</div>

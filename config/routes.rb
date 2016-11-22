@@ -16,7 +16,7 @@ Rails.application.routes.draw do
   delete '/logout',to: 'sessions#destroy'
 
   get '/newpage', to: 'pages#newpage'
-  get '/currentpage', to: 'pages#currentpage'
+  get '/updatelayout', to: 'pages#updatelayout'
 
   # resources :users
   resources :users do

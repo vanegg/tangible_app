@@ -28,9 +28,9 @@ class PagesController < ApplicationController
     p @page_left.layout
   end
 
-  def currentpage
-    p "current_page/" * 5
-    p params
-    p params.keys
+  def updatelayout
+    page = Page.where(page_num: params[:page_num], album_id: params[:album]).first
+    page.update_attribute(:layout, params[:layout])
+    page.save
   end
 end
