@@ -2,7 +2,7 @@
   <%= form_for [current_user,@photo], :photo => user_photos_path(current_user.id), html: { multipart: true } do |f| %>
   <%#= render 'shared/error_messages', object: @var = @photo %>    
     <div class="field">
-      <%= f.label :photo %><br>
+      <%= f.label :upload_photos %><br>
       <%= f.file_field :photo, multiple: true %>
     </div>
     <div class="actions">

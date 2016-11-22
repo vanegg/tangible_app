@@ -11,22 +11,29 @@ class AlbumsController < ApplicationController
       p @album.pages << page
       p page.save
     end
-    # render '_album_carousel'
   end
 
   def create
-    @album = Album.new(title: params[:title])
+    @album = Album.new
     if @album.save
       current_user.albums << @album
+      8.times do |n|
+        p page = Page.new(layout: 0, page_num: n + 1)
+        p @album.pages << page
+        p page.save
+      end
       flash[:success] = "Album has been created!"
     else
       flash[:error] = "Album could not be saved."
     end
-    p "album/create"*5
-    redirect_to album_show_path(@album.id)
+    redirect_to user_album_path(current_user, @album)
   end
 
-  def title
+  def show
+    @album = Album.find(params[:id])
+  end
+
+  def updatetitle
     
   end
 
