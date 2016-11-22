@@ -48,5 +48,8 @@
   padding: 72px;
   border: 2px dashed #A4A4A4;
   border-radius: 7%;
+}
 
+.draggable {
+  z-index: 1;
 }

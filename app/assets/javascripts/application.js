@@ -17,7 +17,7 @@
 //= require_tree .
 
 $(document).ready(function(ev){
-	    var items = $(".nav li").length;
+	var items = $(".nav li").length;
     var leftRight=0;
     if(items>5){
         leftRight=(items-5)*50*-1;
