@@ -2,7 +2,7 @@ class PagesController < ApplicationController
   def newpage
   	p params
   	type = params[:type]
-  	album = Album.find(params[:album])
+  	@album = Album.find(params[:album])
 
   	if type == 'prev'
   		current_page_id = params[:page].to_i
@@ -11,8 +11,8 @@ class PagesController < ApplicationController
   			return
   		end
   		current_page = Page.where(page_num: current_page_id, album_id: album.id)
-  		page_left = Page.where(page_num: current_page_id - 2, album_id: album.id)
-  		page_right = Page.where(page_num: current_page_id - 1, album_id: album.id)
+  		@page_left = Page.where(page_num: current_page_id - 2, album_id: album.id)
+  		@page_right = Page.where(page_num: current_page_id - 1, album_id: album.id)
 
   	elsif type == 'next'
   		current_page_id = params[:page].to_i + 1
@@ -21,11 +21,10 @@ class PagesController < ApplicationController
   			return
   		end
   		current_page = Page.where(page_num: current_page_id, album_id: album.id)
-  		page_left = Page.where(page_num: current_page_id + 1, album_id: album.id)
-  		page_right = Page.where(page_num: current_page_id + 2, album_id: album.id)
+  		@page_left = Page.where(page_num: current_page_id + 1, album_id: album.id)
+  		@page_right = Page.where(page_num: current_page_id + 2, album_id: album.id)
   	end
 
-  	p @spages = [page_left, page_right]
   end
 
 
