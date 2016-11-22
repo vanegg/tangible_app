@@ -22,9 +22,9 @@ class AlbumsController < ApplicationController
         p @album.pages << page
         p page.save
       end
-      flash[:success] = "Album has been created!"
+      flash[:success] = "Tu album ha sido creada - ahora a llenarla con photos!"
     else
-      flash[:error] = "Album could not be saved."
+      flash[:error] = "Tu album no se pudo crear."
     end
     redirect_to user_album_path(current_user, @album)
   end
@@ -33,8 +33,13 @@ class AlbumsController < ApplicationController
     @album = Album.find(params[:id])
   end
 
+  def destroy
+    Album.find(params[:id]).destroy
+    flash[:success] = "Tu album ha sido borrado."
+    redirect_to user_albums_path(current_user)
+  end
+
   def updatetitle
-    
   end
 
   def save_changes 
