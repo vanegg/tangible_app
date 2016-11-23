@@ -18,8 +18,7 @@ class PhotosController < ApplicationController
     else
       flash[:danger] = "Unable to upload: #{err_msg.join()}"
     end
-    
-		redirect_to new_user_album_path(current_user.id)
+    redirect_to user_path(current_user)
 	end
 
 	private
