@@ -1,6 +1,6 @@
-<% lay = @album.pages.find_by_page_num(@id).layout %>
+<% page = @album.pages.find_by_page_num(@id) %>
 
-<% if lay == 0 %>
+<% if page.layout == 0 %>
   <div class="container-fluid">
     <div class="row board-container layout_1">
         <ul class='select-layout'>
@@ -14,17 +14,14 @@
     </div>              
   </div>
 
-  <%#= link_to image_tag("rails.png", alt: "Rails logo"),
-            'http://rubyonrails.org/' %>
-
-<% elsif lay == 1 %>
+<% elsif page.layout == 1 %>
   <div class="container-fluid">
     <div class="row board-container layout_1">
       <div id='0' class="photoboard"></div>     
     </div>              
   </div>
 
-<% elsif lay == 2 %>
+<% elsif page.layout == 2 %>
     <div class="container-fluid">
     <div class="row board-container layout_2">
       <div id ='0' class="photoboard"></div> 
@@ -33,7 +30,7 @@
     </div>              
   </div>
 
-<% elsif lay == 3 %>
+<% elsif page.layout == 3 %>
     <div class="container-fluid">
     <div class="row board-container layout_3">
       <div id='0' class="photoboard"></div>  
