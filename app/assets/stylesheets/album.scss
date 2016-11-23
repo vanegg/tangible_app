@@ -166,10 +166,9 @@
   /*display: inline-block;*/
 }
 
-/*.select-layout {
-  float: none;
-  margin: 0 auto;
-}*/
+.select-layout li {
+  list-style-type: none;
+}
 
 .square_album {
   margin-top: 10px;

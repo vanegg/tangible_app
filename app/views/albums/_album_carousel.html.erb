@@ -3,70 +3,52 @@
 <div class="container-fluid layout_album">
 	<div id="custom_carousel" class="carousel slide" data-ride="carousel" data-interval='false'>
 		<!-- Wrapper for slides -->
-	<% if @album.pages[0]%>
-	<%end%>
-
-	<div class= "album_section">
-		<div class="carousel-inner">
-				<div class="item active">
-					<div class="container-fluid">
-						<div class="row">
-							<div class="top  col-xs-6 page-left">
+		<div class= "album_section">
+			<div class= "carousel-inner">
+				<div class= "item active">
+					<div class= "container-fluid">
+						<div class= "row">
+							<div class= "top  col-xs-6 page-left">
 								<div id= '1' class= 'square_album left'>
-									<% lay = @album.pages.first.layout %>
-									<% if lay == 0 %>
-										<%= render "pages/select_layout" %> 
-									<% elsif lay == 1 %>
-										<%= render "pages/layout1" %> 
-									<% elsif lay == 2 %>
-										<%= render "pages/layout2" %> 
-									<% elsif lay == 3 %>
-										<%= render "pages/layout3" %> 
-									<% end %>
+									<%= render "pages/select_layout", object: @id = 1%>
 								</div>
 							</div>
 							<div class="top  col-xs-6 page-right">
 								<div id= '2' class= 'square_album right'>
-
-
-								<!-- render de una foto -->
-
-								<%= render "pages/select_layout" %> 
-
-									
+									<%= render "pages/select_layout", object: @id = 2 %>
 								</div>
 							</div>
 						</div>
 					</div>
 				</div>
-				<% i = 3%>
-				<%(@album.pages.length / 2 - 1).times do |n|%>
-					<!-- <div class="item">
-						<div class="container-fluid">
-							<div class="row">
-								<div class="top  col-xs-6">
-								 <div id= '<%= i%>' class= 'square_album left'>
-								 		<ul>
-										<li>Layout 1</li>
-										<li>Layout 2</li>
-										<li>Layout 3</li>
-									</ul>
-								 </div>
-								</div>
-								<div class="top  col-xs-6">
-								 <div id= '<%= i + 1%>' class= 'square_album right'>
-								 	<ul>
-								 		<li>Layout 1</li>
-								 		<li>Layout 2</li>
-								 		<li>Layout 3</li>
-								 	</ul>
-								 </div>
-								</div>
+			<% i = 3%>
+			<%(@album.pages.length / 2 - 1).times do |n|%>
+				<!-- <div class="item">
+					<div class="container-fluid">
+						<div class="row">
+							<div class="top  col-xs-6">
+							 <div id= '<%= i%>' class= 'square_album left'>
+							 		<ul>
+									<li>Layout 1</li>
+									<li>Layout 2</li>
+									<li>Layout 3</li>
+								</ul>
+							 </div>
 							</div>
-						</div>            
-					</div> -->
-					<% i += 2%>
-				<%end%>
+							<div class="top  col-xs-6">
+							 <div id= '<%= i + 1%>' class= 'square_album right'>
+							 	<ul>
+							 		<li>Layout 1</li>
+							 		<li>Layout 2</li>
+							 		<li>Layout 3</li>
+							 	</ul>
+							 </div>
+							</div>
+						</div>
+					</div>            
+				</div> -->
+				<% i += 2%>
+			<%end%>
 		</div>
 	</div>
 
