@@ -35,8 +35,9 @@
 
 .photoboard{
   background-color: #F2F2F2;
-  height:100%;
-  padding:70px;
+  height:80px;
+  width: 140px;
+  /*padding:70px;*/
   border: 2px dashed #A4A4A4;
   border-radius: 7%;
 }
@@ -44,7 +45,8 @@
 .layout_3 > .photoboard {
   background-color: #F2F2F2;
   display: inline-block;
-  height:100%;
+  height:148px;
+  width: 148px;
   padding: 72px;
   border: 2px dashed #A4A4A4;
   border-radius: 7%;
