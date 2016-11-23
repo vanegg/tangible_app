@@ -59,3 +59,11 @@ function doDroppable(selector){
       drop: handleDrop
     }); 
 };
+
+function handleDrop(event, ui){
+  page_place = $(this).attr('id');
+  console.log($(this).attr('id'));
+  url = ui.draggable.context.id;
+  console.log($(this).css('border', '0px'));
+  $(this).empty().append("<img src=" + url +" style='height: 100%; width: 100%; object-fit: fill'/>");
+}
