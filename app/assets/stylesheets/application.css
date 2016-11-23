@@ -17,6 +17,7 @@
  .layout_2{
   padding:60px;
   box-sizing:border-box;
+  text-align: center;
 }
 
 .layout_1{
@@ -29,15 +30,14 @@
 .layout_3{
   margin-top: 10%;
   padding:10px;
-  text-align: center;
   box-sizing:border-box;
+  text-align: center;
 }
 
 .photoboard{
   background-color: #F2F2F2;
-  height:80px;
-  width: 140px;
-  /*padding:70px;*/
+  height:130px;
+  width: 250px;
   border: 2px dashed #A4A4A4;
   border-radius: 7%;
 }
@@ -47,10 +47,14 @@
   display: inline-block;
   height:148px;
   width: 148px;
-  padding: 72px;
   border: 2px dashed #A4A4A4;
   border-radius: 7%;
+  
 }
+
+.layout_3 > .photoboard > img {
+    vertical-align: baseline !important;
+  }
 
 .draggable {
   z-index: 1;
