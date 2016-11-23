@@ -62,8 +62,26 @@ function doDroppable(selector){
 
 function handleDrop(event, ui){
   page_place = $(this).attr('id');
-  console.log($(this).attr('id'));
+  num_page = $(this).parent().parent().parent().attr('id');
   url = ui.draggable.context.id;
-  console.log($(this).css('border', '0px'));
+  album_id = $('#num_album').text();
+  
   $(this).empty().append("<img src=" + url +" style='height: 100%; width: 100%; object-fit: fill'/>");
+
+  data = {};
+  data.album = album_id;
+  data.num_page = num_page
+  data.page_place = page_place;
+  data.url = url;
+  console.log(data);
+
+
+  $.post('/add_page',data, function(resp) {
+    console.log('lalala');
+    console.log(resp);
+  }, "json");
 }
+
+// $.post('/create_survey',json, function(url){
+//     window.location.href = url + "";
+// });
