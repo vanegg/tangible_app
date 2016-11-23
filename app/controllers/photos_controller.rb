@@ -22,6 +22,15 @@ class PhotosController < ApplicationController
 		redirect_to new_user_album_path(current_user.id)
 	end
 
+  def addpage
+    p '*'*30
+    p params
+    album = Album.find(params[:album])
+    page = album.pages.find_by(page_num: params[:num_page])
+    page_place = params[:page_place]
+    url = params[:url]
+  end
+
 	private
 		def photo_params
       params.require(:photo).permit({photo: []})
