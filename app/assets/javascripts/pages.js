@@ -23,7 +23,8 @@ $(document).ready(function(ev){
     doDroppable('.photoboard');
   });
 
-
+  // listening to carousel < > arrows
+  // sends album_id, page_id and next or prev, to pages#newpage
   $( "body" ).on( "click", ".carousel-control", function() {
     console.log($( this ).attr('id'));
     page = $('.item.active').children().children().children().children().first().attr('id');
