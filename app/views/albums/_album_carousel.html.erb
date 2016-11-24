@@ -10,7 +10,7 @@
 						<div class= "row">
 							<div class= "top  col-xs-6 page-left">
 								<div id= '1' class= "square_album left">
-									<%= render "pages/select_layout", object: @id = 1%>
+									<%= render "pages/select_layout", object: @id = 1 %>
 								</div>
 							</div>
 							<div class="top  col-xs-6 page-right">
@@ -56,7 +56,7 @@
 					<%i = 1%>
 					<%(@album.pages.length / 2).times do |n|%>
 						<% if n == 0%>
-							<li data-target="#custom_carousel" data-slide-to="<%=n%>" id="<%=i%>" class="mini active"><a   data-remote="true" href="">
+							<li data-target="#custom_carousel" data-slide-to="<%=n%>" id="<%=i%>" class="mini active"><a data-remote="true" href="">
 						<% else %>
 							<li data-target="#custom_carousel" data-slide-to="<%=n%>" id="<%=i%>" class="mini" ><a data-remote="true" href="">
 						<%end%>

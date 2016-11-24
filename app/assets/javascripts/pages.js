@@ -1,5 +1,7 @@
 $(document).ready(function(){
-
+  $('#custom_carousel').ready(function(){
+    console.log("hi");
+  })
   // listening to a lyout selection
   // replaces layout option with layout selected
   // stores page layout selection in database
