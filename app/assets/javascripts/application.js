@@ -22,9 +22,30 @@ $(document).ready(function(ev){
  //    if(items>5){
  //        leftRight=(items-5)*50*-1;
  //    }
-    $('#custom_carousel').on('slide.bs.carousel', function (evt) {
-      $('#custom_carousel .controls li.active').removeClass('active');
-      $('#custom_carousel .controls li:eq('+$(evt.relatedTarget).index()+')').addClass('active');
+
+    // old code used to change active mini-page with carousel
+    // $('#custom_carousel').on('slide.bs.carousel', function (evt) {
+    //   $('#custom_carousel .controls li.active').removeClass('active');
+    //   $('#custom_carousel .controls li:eq('+$(evt.relatedTarget).index()+')').addClass('active');
+    // })
+
+    // mini-pages are listening
+    // mini-page selected has desired page number
+    // page number and album number are sent to pagecontroller#showpage
+    // adjust which mini page and large page are active
+    $('.mini').on("click", function (evt) {
+      new_page = $(this).attr('id');
+      album = $('#num_album').text();
+
+      active_page = $('.item.active')
+      active_page.removeClass("active");
+      $('#' + new_page + '.square_album').parent().parent().parent().parent().addClass('active');
+      
+      active_mini = $('#custom_carousel .controls li.active')
+      active_mini.removeClass("active");
+      $('#' + new_page + '.mini').addClass('active');
+
+      $('#' + new_page + '.mini a').attr('href','/showpage?album=' + album + '&page=' + new_page);
     })
     // $('.nav').draggable({ 
     //     axis: "x",
@@ -38,6 +59,7 @@ $(document).ready(function(ev){
     //     }
       
     // });
+
 
 });
 

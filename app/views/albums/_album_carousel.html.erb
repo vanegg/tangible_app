@@ -44,7 +44,6 @@
 		</div>
 	</div>
 
-
 	<p id='num_album'><%=@album.id%></p>
 
 	<%= link_to "‹","", remote: true, class: "izq carousel-control", id:'prev' %>
@@ -56,9 +55,13 @@
 				<ul class="nav ui-widget-header">
 					<%i = 1%>
 					<%(@album.pages.length / 2).times do |n|%>
-					<li data-target="#custom_carousel" data-slide-to="<%=n%>" class="active"><a href="#">
-					<%=image_tag("void_layout.png", alt: "layout_0")%><small>Página <%=i%> - <%=i + 1%></small></a></li>
-					<%i += 2%>
+						<% if n == 0%>
+							<li data-target="#custom_carousel" data-slide-to="<%=n%>" id="<%=i%>" class="mini active"><a   data-remote="true" href="">
+						<% else %>
+							<li data-target="#custom_carousel" data-slide-to="<%=n%>" id="<%=i%>" class="mini" ><a data-remote="true" href="">
+						<%end%>
+						<%=image_tag("void_layout.png", alt: "layout_0")%><small>Página <%=i%> - <%=i + 1%></small></a></li>
+						<%i += 2%>
 					<%end%>		
 					<div class="pages_section"></div>	  
 				</ul>

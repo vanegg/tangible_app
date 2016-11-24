@@ -20,16 +20,30 @@ $(document).ready(function(){
   });
 
   // listening to carousel < > arrows
-  // sends album_id, page_id and next or prev, to pages#newpage
+  // sends album_id, page_id and next or prev, to pages#showpage
+  // removeClass active on active page and mini page
+  // addClass active to next/prev page and mini page
   $( "body" ).on( "click", ".carousel-control", function(event) {
     page = $('.item.active').children().children().children().children().first().attr('id');
     album = $('#num_album').text();
-    $('#' + $( this ).attr('id')).attr('href','/newpage?album=' + album + '&page=' + page + "&type=" + $( this ).attr('id'));
-    // $('#custom_carousel .controls li.active').removeClass('active');
-    // $('#custom_carousel .controls li:eq('+$(event.relatedTarget).index()+')').addClass('active');
+    if (($(this).attr("id") == "next" && page == 7) || ($(this).attr("id") == "prev" && page == 1)) {
+      return
+    } else {
+      active_page = $('.item.active')
+      active_page.removeClass("active");
+      active_mini = $('#custom_carousel .controls li.active')
+      active_mini.removeClass("active");
+      if ($(this).attr("id") == "next"){
+        page = parseInt(page) + 2;
+        active_page.next().addClass("active");
+        active_mini.next().addClass("active");
+      } else {
+        page = parseInt(page) - 2;
+        active_page.prev().addClass("active");
+        active_mini.prev().addClass("active");
+      };
+      $(this).attr('href','/showpage?album=' + album + '&page=' + page);
+    };
   });
-
-  // $('#custom_carousel').on('slide.bs.carousel', function (evt) {
-  // })
 
 });
