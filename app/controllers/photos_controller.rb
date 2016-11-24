@@ -33,19 +33,28 @@ class PhotosController < ApplicationController
       photo = Photo.find(photo_id)
     end
 
+    
     if photo 
-      location = Location.create(photo_id: photo_id, page_id: page.id, page_place: page_place)
-      photo.locations << location
-      photo.save
+      location = Location.where(page_id: page.id, page_place: page_place).first
+
+      if location
+        updatelocation(location, photo)
+      else
+        location = Location.create(photo_id: photo_id, page_id: page.id, page_place: page_place)
+        photo.locations << location
+        photo.save
+      end
     end
-    p '*' * 30
-    p photo.pages
-    p page.photos
-    p location
+    render json: location.to_json
   end
 
 	private
 		def photo_params
       params.require(:photo).permit({photo: []})
 		end
+
+    def updatelocation (location, photo)
+      location.update_attribute(:photo_id, photo.id)
+      location.save
+    end
 end
