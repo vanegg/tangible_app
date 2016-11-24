@@ -1,8 +1,4 @@
-$(document).ready(function(ev){
-	 
-  $('right-btn').on('click', function(){
-  	console.log("rigth button pushed");
-  });
+$(document).ready(function(){
 
   // listening to a lyout selection
   // replaces layout option with layout selected
@@ -25,11 +21,15 @@ $(document).ready(function(ev){
 
   // listening to carousel < > arrows
   // sends album_id, page_id and next or prev, to pages#newpage
-  $( "body" ).on( "click", ".carousel-control", function() {
-    console.log($( this ).attr('id'));
+  $( "body" ).on( "click", ".carousel-control", function(event) {
     page = $('.item.active').children().children().children().children().first().attr('id');
     album = $('#num_album').text();
     $('#' + $( this ).attr('id')).attr('href','/newpage?album=' + album + '&page=' + page + "&type=" + $( this ).attr('id'));
+    // $('#custom_carousel .controls li.active').removeClass('active');
+    // $('#custom_carousel .controls li:eq('+$(event.relatedTarget).index()+')').addClass('active');
   });
+
+  // $('#custom_carousel').on('slide.bs.carousel', function (evt) {
+  // })
 
 });
