@@ -4,22 +4,25 @@ $(document).ready(function(ev){
   doDroppable('.photoboard');
 
   $('#album_title').on('change', function(event){
-    console.log($('#album_title').val());
+    updateTitle();
 
   });
 
   num_album = $('#num_album').text();
   $('#edit_album_' + num_album).on('submit', function(event){
   	event.preventDefault();
-    console.log($('#album_title').val());
+    updateTitle();
   	
   });
 
 });
 
-function saveTitle(){
-	title = $('#album_title').val();
-	$.post('/save_title',title, function(resp) {
+function updateTitle(){
+	console.log($('#album_title').val());
+	album = {};
+	album.id = $('#num_album').text();
+	album.title = $('#album_title').val();
+	$.post('/update_title',album, function(resp) {
     console.log('callback:' + resp);
   });
 };

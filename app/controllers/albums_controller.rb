@@ -40,6 +40,8 @@ class AlbumsController < ApplicationController
   end
 
   def updatetitle
+    p params
+    render plain: 'lalala'
   end
 
   def save_changes 
