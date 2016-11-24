@@ -63,4 +63,8 @@ class PagesController < ApplicationController
     page.update_attribute(:layout, params[:layout])
     page.save
   end
+
+  def updatelocation
+    
+  end
 end
