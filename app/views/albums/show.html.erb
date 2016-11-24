@@ -1,13 +1,5 @@
 <% provide(:title, 'UntitledAlbum') %>
 <div class="container-fluid">
-  <div class="row" id="album-title">
-    <div class="col-md-3">
-      <%= form_for [current_user, @album] do |f| %>
-      <%= f.text_field :title, placeholder: "Untitled Album" %>
-      <%= f.submit 'Save title', class: "btn btn-sm btn-default" %>
-      <% end %>
-    </div>
-  </div>
   <div class="row">
     <div class="col-md-12">
       <div class="row">
@@ -35,6 +27,13 @@
           </div>
         </div>
         <div class="album- carousel col-md-9">
+        <div class="row" id="album-title">
+          <div class="col-md-3">
+            <%= form_for [current_user, @album], id: 'title_form' do |f| %>
+            <%= f.text_field :title, placeholder: "Título del álbum..." %>
+            <% end %>
+          </div>
+        </div>
           <%= render 'albums/album_carousel' %>
         </div>
       </div>
