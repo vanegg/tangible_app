@@ -85,7 +85,7 @@ function handleDrop(event, ui){
   num_page = $(this).parent().parent().parent().attr('id');
   url = ui.draggable.context.id;
   album_id = $('#num_album').text();
-  
+  $(this).css('border','0px');
   $(this).empty().append("<img src=" + url +" style='height: 100%; width: 100%; object-fit: fill'/>");
 
   data = {};
@@ -93,15 +93,9 @@ function handleDrop(event, ui){
   data.num_page = num_page
   data.page_place = page_place;
   data.url = url;
-  console.log(data);
-
+  // console.log(data);
 
   $.post('/add_page',data, function(resp) {
-    console.log('lalala');
-    console.log(resp);
-  }, "json");
+    console.log('callback:' + resp.id);
+  });
 }
-
-// $.post('/create_survey',json, function(url){
-//     window.location.href = url + "";
-// });

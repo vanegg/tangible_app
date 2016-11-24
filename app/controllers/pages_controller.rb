@@ -24,7 +24,4 @@ class PagesController < ApplicationController
     page.save
   end
 
-  def updatelocation
-    
-  end
 end
