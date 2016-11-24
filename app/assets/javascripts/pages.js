@@ -42,7 +42,6 @@ $(document).ready(function(){
         active_page.prev().addClass("active");
         active_mini.prev().addClass("active");
       };
-      console.log($( this ).attr('id'));
       $(this).attr('href','/showpage?album=' + album + '&page=' + page);
     };
   });
