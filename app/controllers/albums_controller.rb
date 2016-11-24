@@ -22,7 +22,7 @@ class AlbumsController < ApplicationController
         p @album.pages << page
         p page.save
       end
-      flash[:success] = "Tu album ha sido creada - ahora a llenarla con photos!"
+      flash[:success] = "Tu album ha sido creado - ahora a llenarla con photos!"
     else
       flash[:error] = "Tu album no se pudo crear."
     end

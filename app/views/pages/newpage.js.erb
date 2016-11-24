@@ -1,19 +1,28 @@
-// console.log("<%=@left_urls%>");
-// console.log("<%=@right_urls%>");
-
+// object is sent with utf-8 symbols
+// decodeEntities decodes ie: &quot => "
 function decodeEntities(encodedString) {
     var textArea = document.createElement('textarea');
     textArea.innerHTML = encodedString;
     return textArea.value;
 }
 
-left = JSON.parse(decodeEntities("<%=@left_urls%>"));
-right = JSON.parse(decodeEntities("<%=@right_urls%>"));
+left_page = JSON.parse(decodeEntities("<%=@left_urls%>"));
+right_page = JSON.parse(decodeEntities("<%=@right_urls%>"));
 
-console.log(left);
-console.log(right);
+// iterates over each photo info in the object
+// appends each photo url to corresponding div
+function appendHtml(hash, direction) {
+  for (var key in hash){
+    var html = $(".square_album." + direction + "#" + hash['page']
+     + " #" + key + ".photoboard").append("<img src='" + hash[key] + "' style='height: 100%; width: 100%; object-fit: fill'>")
+    
+    if (key == "0"){html}
+    else if(key == "1"){ html}
+    else if(key == "2"){ html}
+    else if(key == "3"){ html};
+  }
+};
 
-for (var key in right){
-  console.log(key + " -> " + right[key]);   
-  if (key == "0"){};
-}
+appendHtml( left_page, "left" );
+appendHtml( right_page, "right" );
+

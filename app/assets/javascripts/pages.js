@@ -32,8 +32,4 @@ $(document).ready(function(ev){
     $('#' + $( this ).attr('id')).attr('href','/newpage?album=' + album + '&page=' + page + "&type=" + $( this ).attr('id'));
   });
 
-  // // load photos
-  // function loadPhotos(page_num){
-    
-  // };
 });
