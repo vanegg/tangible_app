@@ -26,7 +26,8 @@ Rails.application.routes.draw do
     end
   end
 
-  post '/add_page', to: 'photos#addpage' 
+  post '/add_page', to: 'photos#addpage'
+  post '/update_title', to:'albums#updatetitle'
 
   resources :account_activations, only: [:edit]
   resources :password_resets,     only: [:new, :create, :edit, :update]
