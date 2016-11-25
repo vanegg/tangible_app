@@ -3,7 +3,8 @@ $(document).ready(function(ev){
   doDraggable('.draggable');
   doDroppable('.photoboard');
 
-  $('#album_title').on('change', function(event){
+  $('#title_field').on('change', function(event){
+  	console.log('cambio');
     updateTitle();
 
   });
@@ -18,10 +19,10 @@ $(document).ready(function(ev){
 });
 
 function updateTitle(){
-	console.log($('#album_title').val());
+	console.log($('#title_field').val());
 	album = {};
 	album.id = $('#num_album').text();
-	album.title = $('#album_title').val();
+	album.title = $('#title_field').val();
 	$.post('/update_title',album, function(resp) {
     console.log('callback:' + resp);
   });
