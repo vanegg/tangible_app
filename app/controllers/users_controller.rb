@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
-  before_action :logged_in_user, only: [:index, :edit, :update, :destroy]
-  before_action :correct_user,   only: [:edit, :update, :show]
+  before_action :logged_in_user, only: []
+  before_action :correct_user,   only: [:edit, :update, :show, :destroy, :index]
   before_action :admin_user,     only: :destroy
 
 
@@ -11,7 +11,6 @@ class UsersController < ApplicationController
   def show
     @user = current_user
     @photo = Photo.new
-    # redirect_to root_url and return unless @user
   end
 
   def new
@@ -22,7 +21,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       @user.send_activation_email
-      flash[:info] = "Please check your email to activate your account."
+      flash[:info] = "Por favor revisa tu email para activar tu cuenta"
       redirect_to root_url
     else
       render 'new'
@@ -36,7 +35,7 @@ class UsersController < ApplicationController
   def update
     @user = current_user
     if @user.update_attributes(user_params)
-       flash[:success] = "Profile updated"
+       flash[:success] = "Cambios del profile has sido guardados"
       redirect_to @user
     else
       render 'edit'
@@ -45,7 +44,7 @@ class UsersController < ApplicationController
 
   def destroy
     User.find(params[:id]).destroy
-    flash[:success] = "User deleted"
+    flash[:success] = "Usuario ha sido "
     redirect_to users_url
   end
 
@@ -77,8 +76,4 @@ class UsersController < ApplicationController
     def admin_user
       redirect_to(root_url) unless current_user.admin?
     end
-
-
-    
-
 end
