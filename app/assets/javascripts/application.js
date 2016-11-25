@@ -12,11 +12,14 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery-ui/draggable
+//= require jquery-ui/droppable
+//= require jquery-ui/sortable
 //= require bootstrap
 //= require turbolinks
 //= require_tree .
 
-$(document).ready(function(ev){
+$(document).on('ready turbolinks:load',function(ev){
 	// var items = $(".nav li").length;
  //    var leftRight=0;
  //    if(items>5){
