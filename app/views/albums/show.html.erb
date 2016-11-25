@@ -27,12 +27,10 @@
           </div>
         </div>
         <div class="album- carousel col-md-9">
-        <div class="row" id="album-title">
-          <div class='title'>
+        <div class="row" id="album-title">          
           <%= form_for [current_user, @album], class: 'title_form' do |f| %>
-          <%= f.text_field :title, placeholder: "Título del álbum...", class: "form-control", id:'title_field'%>
-          <% end %>
-          </div>
+          <%= f.text_field :title, placeholder: "Título del álbum...", value: @album.title,  class: "form-control", id:'title_field'%>
+          <% end %>          
         </div>
           <%= render 'albums/album_carousel' %>
         </div>
