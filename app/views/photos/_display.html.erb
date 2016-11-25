@@ -1,0 +1,5 @@
+<div class="display_photos">
+  <% current_user.photos.reverse.each do |photo| %>  
+      <img id="<%= photo.photo_url(:large)%>" src="<%= photo.photo_url(:thumb) %>">
+  <% end %>
+</div>

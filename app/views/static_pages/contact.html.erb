@@ -1,14 +1,63 @@
 <% provide(:title, "Contacto") %>
 
+
+<section id="contact" class="contact-section">
+           <div class="container">
+               <div class="row">
+                   <div class="col-xs-12 text-center">
+                       <h2 class="section-title">¿Necesitas ayuda?<br><br> (01 55) 5211.6931</h2>
+                       <p class="sub-title">El objetivo de todo este sitio es justamente apoyarte en lo que necesites <br>Desde pequeños hasta grandes proyectos son todo un reto para que destaques de tu competencia.</p>
+                   </div><!-- /.col-xs-12 -->
+               </div><!-- /.row -->
+
+
+               <div class="row margin-top-50">
+                   <div class="col-xs-12 text-center">
+                       <form name="contact-form" id="contactForm" action="sendemail.php" method="POST">
+                           <div class="row">
+                               <div class="col-md-4">
+                                   <div class="form-group">
+                                     <label class="sr-only" for="name">Nombre</label>
+                                     <input type="text" name="name" class="form-control" id="name" placeholder="Tu nombre">
+                                   </div>
+                               </div>
+                               <div class="col-md-4">
+                                   <div class="form-group">
+                                     <label class="sr-only" for="email">Email</label>
+                                     <input type="email" name="email" class="form-control" id="email" placeholder="Tu email">
+                                   </div>
+                               </div>
+                               <div class="col-md-4">
+                                   <div class="form-group">
+                                     <label class="sr-only" for="subject">Asunto</label>
+                                     <input type="text" name="subject" class="form-control" id="subject" placeholder="Tu telefono">
+                                   </div>
+                               </div>
+                           </div>
+
+                           <div class="form-group">
+                             <label class="sr-only" for="message">Mensaje</label>
+                             <textarea name="message" class="form-control" id="message" rows="7" placeholder="Tu mensaje, describenos un poco que deseas hacer ..."></textarea>
+                           </div>
+
+                           <button type="submit" name="submit" class="btn btn-primary btn-lg">Enviar</button>
+                       </form>
+                   </div><!-- /.col-xs-12 -->
+               </div><!-- /.row -->
+           </div><!-- /.container -->
+       </section>
+
+
+
 <div class="container">
   <div class="row">
+    <div
       <div id="map-outer" class="col-md-12">
           <div id="address" class="col-md-4">
-            <h2>Nuestra Direccion</h2>
+            <h4><strong>Contactanos</strong></h4>
             <address>
-            <strong>Codeacamp</strong><br>
-                Sonora, 84<br>
-                30123<br>
+            <strong>Realidad Tangible</strong><br>
+                06700<br>
                 Roma Norte<br>
                 CDMX<br>
                 <abbr>T:</abbr> +39 041 240 5411

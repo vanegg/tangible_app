@@ -22,7 +22,6 @@ class PhotosController < ApplicationController
 	end
 
   def addpage
-
     album = Album.find(params[:album])
     page = album.pages.find_by(page_num: params[:num_page])
     page_place = params[:page_place]

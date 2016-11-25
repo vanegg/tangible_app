@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   get 'sessions/new'
 
   root 'static_pages#home'
-  get  '/help',    to: 'static_pages#help'
+  get  '/privacy',    to: 'static_pages#privacy'
   get  '/about',   to: 'static_pages#about'
   get  '/contact', to: 'static_pages#contact'
   get  '/signup',  to: 'users#new'
@@ -17,6 +17,8 @@ Rails.application.routes.draw do
 
   get '/showpage', to: 'pages#showpage'
   get '/updatelayout', to: 'pages#updatelayout'
+  get '/instagram', to: 'sessions#instagram_auth'
+  get '/instagram/callback', to: 'sessions#instagram'
 
   # resources :users
   resources :users do
