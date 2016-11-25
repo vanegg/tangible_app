@@ -1,4 +1,10 @@
-$(document).ready(function(){
+$(document).on('ready turbolinks:load',function(){
+  $('#custom_carousel').ready(function(){
+    album = $('#num_album').text();
+    route = '/showpage?album=' + album + '&page=1'
+    $.get(route);
+  })
+
 
   // listening to a lyout selection
   // replaces layout option with layout selected

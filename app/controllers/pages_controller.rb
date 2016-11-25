@@ -1,7 +1,6 @@
 class PagesController < ApplicationController
 
   def showpage
-    p "#//#" * 10
     @album = Album.find(params[:album])
     page_num = params[:page].to_i
     left_urls = {}
@@ -14,8 +13,8 @@ class PagesController < ApplicationController
 
     left_page.locations.each{|loc| left_urls[loc.page_place] = Photo.find(loc.photo_id).photo_url(:large)}
     right_page.locations.each{|loc| right_urls[loc.page_place] = Photo.find(loc.photo_id).photo_url(:large)}
-    p @left_urls = left_urls.to_json
-    p @right_urls = right_urls.to_json
+    @left_urls = left_urls.to_json
+    @right_urls = right_urls.to_json
   end
 
   def updatelayout

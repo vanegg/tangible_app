@@ -1,4 +1,4 @@
-$(document).ready(function(ev){
+$(document).on('ready turbolinks:load',function(ev){
  
   doDraggable('.draggable');
   doDroppable('.photoboard');

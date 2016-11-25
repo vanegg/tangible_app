@@ -1,6 +1,47 @@
-<% provide(:title, "Contact") %>
-<h1>Contact</h1>
-<p>
-  Contact the Ruby on Rails Tutorial about the sample app at the
-  <a href="http://www.railstutorial.org/contact">contact page</a>.
-</p>
+<% provide(:title, "Contacto") %>
+
+<div class="container">
+  <div class="row">
+      <div id="map-outer" class="col-md-12">
+          <div id="address" class="col-md-4">
+            <h2>Nuestra Direccion</h2>
+            <address>
+            <strong>Codeacamp</strong><br>
+                Sonora, 84<br>
+                30123<br>
+                Roma Norte<br>
+                CDMX<br>
+                <abbr>T:</abbr> +39 041 240 5411
+           </address>
+          </div>
+        <div id="map-container" class="col-md-8"></div>
+      </div><!-- /map-outer -->
+  </div> <!-- /row -->
+ 
+  <div class="row">
+  <form class="form-horizontal" name="commentform">
+    <div class="form-group">
+        <div class="col-md-4">
+            <input type="text" class="form-control" id="first_name" name="first_name" placeholder="Nombre"/>
+        </div>
+        <div class="col-md-4">
+            <input type="text" class="form-control" id="last_name" name="last_name" placeholder="Apellido"/>
+        </div>
+        <div class="col-md-4 input-group">
+        <span class="input-group-addon">@</span>
+            <input type="email" class="form-control" id="email" name="email" placeholder="Email"/>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-md-12">
+            <textarea rows="6" class="form-control" id="comments" name="comments" placeholder="Tu pregunta o comentario"></textarea>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-md-6">
+            <button type="submit" value="Submit" class="btn btn-warning pull-right">Enviar</button>
+        </div>
+    </div>
+</form>
+</div><!-- /row -->
+</div><!-- /container -->
