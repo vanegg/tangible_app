@@ -24,7 +24,7 @@ class AlbumsController < ApplicationController
       end
       flash[:success] = "Tu album ha sido creado - ahora a llenarla con photos!"
     else
-      flash[:error] = "Tu album no se pudo crear."
+      flash[:error] = "Tu album no pudo ser creado."
     end
     redirect_to user_album_path(current_user, @album)
   end
@@ -40,8 +40,14 @@ class AlbumsController < ApplicationController
   end
 
   def updatetitle
-    p params
-    render plain: 'lalala'
+    album = Album.find(params[:id])
+    album.update_attribute(:title, params[:title])
+    if album.save
+      p album
+      render plain: "true"
+    else
+      render plain: "false"
+    end
   end
 
   def save_changes 
