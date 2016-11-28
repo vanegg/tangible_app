@@ -45,7 +45,7 @@ class PhotosController < ApplicationController
         photo.save
       end
     end
-    render json: location.to_json
+    render json: photo_id.to_json
   end
 
 	private

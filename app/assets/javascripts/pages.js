@@ -23,6 +23,7 @@ $(document).on('ready turbolinks:load',function(){
 
     doDraggable('.draggable');
     doDroppable('.photoboard');
+    dragToDelete('.photo-in-album')
   });
 
   // listening to carousel < > arrows
@@ -53,3 +54,4 @@ $(document).on('ready turbolinks:load',function(){
   });
 
 });
+

@@ -65,3 +65,7 @@
 .draggable {
   z-index: 1;
 }
+
+.photo-in-album {
+  z-index: 2;
+}
