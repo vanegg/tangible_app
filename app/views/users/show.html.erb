@@ -7,13 +7,41 @@
         <div class="col-md-3">
         <%= render 'navbar_user'%>
         </div>
+
+
         <div class="col-md-9">
-         <%= render 'photos/new' %>
-          <% if !@user.photos.empty? %>
-            <%= render 'photos/index' %>    
-          <% end %>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+          <div class="row">
+            <div class="col-md-4">
+              <%= render 'photos/new' %>
+            </div>
+            <div class="col-md-1">
+            </div>
+              <% if session[:access_token] %>
+                <div class=" col-md-4 instagram get_photos">
+                  <%= link_to "My Insta Photos", "" %>
+                </div>
+              <% else %>
+                <div class="col-md-4 instagram login">
+                  <%= link_to "Sign in with Instagram", instagram_path, class: "btn btn-medium btn-default" %>
+                </div> 
+              <% end %>
+            </div>
+            <div class="row index_photos">
+              <div class="col-md-9">
+                <% if !@user.photos.empty? %>
+                  <%= render 'photos/display' %>    
+                <% end %>
+              </div>
+            </div> <!-- second row -->
+        </div> <!-- col 9 -->
+
+
+      </div> <!-- first row  -->
+    </div> <!-- col 12 -->
+  </div> <!-- row -->
+</div>  <!-- container -->
+
+
+
+
+

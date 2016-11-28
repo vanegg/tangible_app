@@ -35,6 +35,9 @@ gem 'jbuilder', '~> 2.5'
 # Upload and edit pictures
 # gem 'carrierwave', github: 'carrierwaveuploader/carrierwave'
 gem 'carrierwave'
+# instagram
+gem 'omniauth-instagram'
+gem 'instagram'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

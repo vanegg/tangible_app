@@ -6,6 +6,9 @@
     <%= render 'layouts/shim' %>
   </head>
   <body>
+    <div class="background-image">
+      <% image_tag('images/Wood.jpg')%>
+    </div>
     <%= render 'layouts/header' %>
     <div class="container">
       <% flash.each do |message_type, message| %>

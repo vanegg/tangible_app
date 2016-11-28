@@ -26,3 +26,6 @@
 
 # Ignore uploaded photos
 /public/uploads
+
+# Ignore instagram keys
+config/instagram.yml

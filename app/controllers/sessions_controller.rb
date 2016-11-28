@@ -26,4 +26,14 @@ class SessionsController < ApplicationController
     log_out if logged_in?
     redirect_to root_url
   end
+
+  def instagram_auth
+    redirect_to Instagram.authorize_url(redirect_uri: CALLBACK_URL)
+  end
+
+  def instagram
+    response = Instagram.get_access_token(params[:code], :redirect_uri => CALLBACK_URL)
+    session[:access_token] = response.access_token
+    redirect_to current_user
+  end
 end
