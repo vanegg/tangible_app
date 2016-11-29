@@ -8,12 +8,14 @@
         <div class="col-md-3">
           <%= render 'navbar_user'%>
         </div>
-        <div class="col-md-6 col-md-offset-2">
-          <h1>Edita tu perfil</h1>
-          <%= render 'form' %>
-          <div class="gravatar_edit">
-            <%= gravatar_for @user %>
-            <a href="http://gravatar.com/emails" target="_blank">Change</a>
+        <div lass="col-md-9">          
+          <h1 class='title-page'>Edita tu perfil</h1>
+          <div class="col-md-6 col-md-offset-2">
+            <%= render 'form' %>
+            <div class="gravatar_edit">
+              <%= gravatar_for @user %>
+              <a href="http://gravatar.com/emails" target="_blank">Change</a>
+            </div>
           </div>
         </div>
       </div>
