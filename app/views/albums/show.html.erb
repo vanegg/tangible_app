@@ -23,7 +23,7 @@
         <div class="col-md-2">
           <h4>Mis Photos</h4>
           <div class="pre-scrollable">
-            <%= render 'photos/index' %> 
+            <%= render 'photos/index', :layout => false %> 
           </div>
         </div>
         <div class="album- carousel col-md-9">
@@ -32,7 +32,7 @@
           <%= f.text_field :title, placeholder: "Título del álbum...", value: @album.title,  class: "form-control", id:'title_field'%>
           <% end %>          
         </div>
-          <%= render 'albums/album_carousel' %>
+          <%= render 'albums/album_carousel', :layout => false %>
         </div>
       </div>
     </div>
