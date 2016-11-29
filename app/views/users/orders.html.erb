@@ -1,0 +1,33 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="row">
+        <div class="col-md-3">
+          <%= render 'users/navbar_user'%>
+        </div>
+        <div class="col-md-9">
+          <table class="table">
+            <thead>
+              <tr>
+                <th>#ID</th>
+                <th>Album</th>
+                <th>Envio Pedido</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <% @orders.each do |album| %>
+                <tr>
+                  <td><%= album.id %></td>
+                  <td><%= album.title %></td>
+                  <td><%= album.updated_at %></td>
+                  <td>terminando/procesando/enviado<%#= album.status %></td>
+                </tr>
+              <% end %>
+            </tbody>
+          </table>
+        </div> <!-- col-md-9 -->
+      <div> <!-- row -->
+    </div> <!-- col-md-12 -->
+  </div><!-- row -->
+</div><!-- container -->

@@ -13,7 +13,6 @@ class PhotosController < ApplicationController
         end
       end
     else
-      p "entrar a else"
       params[:remote_photo_url].each do |photo_object|
         @photo = Photo.new(remote_photo_url: photo_object)
         if @photo.save
@@ -56,7 +55,7 @@ class PhotosController < ApplicationController
         photo.save
       end
     end
-    render json: photo_id.to_json
+    render json: location.to_json
   end
 
 	private

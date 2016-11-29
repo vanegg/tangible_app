@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   before_action :logged_in_user, only: []
   before_action :correct_user,   only: [:edit, :update, :show, :destroy, :index]
-  before_action :admin_user,     only: :destroy
+  before_action :admin_user,     only: [:destroy, :admin_orders]
 
 
   def index
@@ -51,16 +51,13 @@ class UsersController < ApplicationController
     redirect_to users_url
   end
 
-
-  def insta_photos
-    client = Instagram.client(:access_token => session[:access_token])
-    user = client.user
-    @insta_photos = client.user_recent_media
+  def orders
+    #users completed albums
+    @orders = Album.where(user_id: current_user)
   end
 
-  def insta_popular_media
-    client = Instagram.client(:access_token => session[:access_token])
-    @pop_photos = client.media_popular
+  def admin_orders
+    @orders = Album.all
   end
 
   private
