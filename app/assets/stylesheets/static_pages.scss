@@ -1,3 +1,93 @@
 // Place all the styles related to the StaticPages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+/* header */
+
+$primary-color: #9d9d9d;
+$primary-dark-color: #F1F1F1;
+$secondary-color: #F78181;
+
+.navbar-inverse {
+	border-bottom: 0px white;
+	background-color: #F1F1F1 !important;
+	height: 70px ;
+}
+
+.navbar-inverse >.container{
+	height: 70px;
+	border-bottom: 2px #F1F1F1;
+}
+/**/
+.container {
+	box-shadow: 12px 0 15px -4px rgba(0, 0, 0, 0.1), -12px 0 8px -4px rgba(0, 0, 0, 0.1);
+	margin-top: 15px;
+}
+
+.navbar {
+  background-color: white;
+  padding: 0px 10px 0px 10px;
+}
+
+.navbar-inverse .navbar-nav > li > a {
+	color: $primary-color;
+	&:hover {
+    color: #F78181;
+    text-decoration: none;
+  }  
+}
+
+.navbar-inverse .navbar-nav > .open > a:focus  {
+  background-color: #F78181;
+  color: #fff;
+}
+
+
+#logo {
+  float: left;
+  margin-right: 10px;
+  font-size: 1.7em;
+  color: $primary-color;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  padding-top: 9px;
+  font-weight: bold;
+
+  &:hover {
+    color: #F78181;
+    text-decoration: none;
+  }
+}
+
+/*HOME*/
+/* carousel */
+.carousel {
+	width: 102.2%;
+	margin-top: -15px;
+	margin-right: 15px;
+	margin-left: -15px;
+}
+
+.carousel-inner {
+	height: 655px;
+
+}
+
+.carousel-inner > .item > img,
+.carousel-inner > .item > a > img {
+	object-fit: fill;
+	.center {
+    display: block;
+    margin: 0 auto;
+	}
+}
+
+.container {
+	background-color: white;
+}
+
+promo-link {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+ }

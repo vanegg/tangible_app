@@ -30,7 +30,7 @@ $(document).on('ready turbolinks:load',function(){
   // sends album_id, page_id and next or prev, to pages#showpage
   // removeClass active on active page and mini page
   // addClass active to next/prev page and mini page
-  $( "body" ).on( "click", ".carousel-control", function(event) {
+  $( "body" ).on( "click", ".carousel-control.i", function(event) {
     page = $('.item.active').children().children().children().children().first().attr('id');
     album = $('#num_album').text();
     if (($(this).attr("id") == "next" && page == 7) || ($(this).attr("id") == "prev" && page == 1)) {

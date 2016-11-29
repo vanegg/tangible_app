@@ -13,6 +13,15 @@
  *= require_tree .
  *= require_self
  */
+body {
+  background-color: #F1F1F1;
+}
+
+@media (min-width: 1600px ){
+.container {
+     width: 1400px !important;
+    }
+}
 
  .layout_2{
   padding:60px;
