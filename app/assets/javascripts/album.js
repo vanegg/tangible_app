@@ -6,7 +6,6 @@ $(document).on('ready turbolinks:load',function(ev){
   $('#title_field').on('change', function(event){
   	console.log('cambio');
     updateTitle();
-
   });
 
   num_album = $('#num_album').text();

@@ -31,7 +31,8 @@ $(document).on('ready turbolinks:load',function(ev){
     //   $('#custom_carousel .controls li.active').removeClass('active');
     //   $('#custom_carousel .controls li:eq('+$(evt.relatedTarget).index()+')').addClass('active');
     // })
-
+     dropToDelete('.trash_img');
+     $('.trash_img').css('visibility', 'hidden');
     // mini-pages are listening
     // mini-page selected has desired page number
     // page number and album number are sent to pagecontroller#showpage
@@ -77,19 +78,19 @@ function doDraggable(selector) {
 
 function doDroppable(selector){
      $(selector).droppable( {
-      // accept: '.photoPile div',
+      accept: '.photo-drag-pile',
       hoverClass: 'hovered',
       drop: handleDrop
     }); 
 };
 
 function handleDrop(event, ui){
-  page_place = $(this).attr('id');
-  num_page = $(this).parent().parent().parent().attr('id');
+  _this = $(this);
+  page_place = _this.attr('id');
+  num_page = _this.parent().parent().parent().attr('id');
   url = ui.draggable.context.id;
   album_id = $('#num_album').text();
-  $(this).css('border','0px');
-  $(this).empty().append("<img src=" + url +" style='height: 100%; width: 100%; object-fit: fill'/>");
+  _this.css('border','0px');
 
   data = {};
   data.album = album_id;
@@ -98,7 +99,55 @@ function handleDrop(event, ui){
   data.url = url;
   // console.log(data);
 
-  $.post('/add_page',data, function(resp) {
-    console.log('callback:' + resp.id);
+  $.post('/add_page',data, function(id_photo) {
+    console.log('callback:' + id_photo);   
+    _this.empty().append("<img class='photo-in-album' id='" +  id_photo + "' src=" + url +" style='height: 100%; width: 100%; object-fit: fill'/><a class='carousel-control' href=''>x</a>");
+    dragToDelete('.photo-in-album');
   });
+
 }
+
+
+
+function dragToDelete(selector) {
+  $(selector).draggable({
+     containment: '#content',
+     // stack: 'body',
+     cursor: 'move',
+     // helper: "clone",
+     revert: true,
+     stop: function(){$('.trash_img').css('visibility', 'hidden');},
+     drag: handleDragToDelete
+  });
+};
+
+function dropToDelete(selector){
+     $(selector).droppable( {
+      accept: '.photo-in-album',
+      hoverClass: 'hovered',
+      drop: handleDropToDelete
+    }); 
+};
+
+function handleDropToDelete(event, ui){
+
+  page_place = $(this).parent();
+  num_page = $(this).parent().parent().parent().attr('id');
+  photo_id = ui.draggable.context.id;
+  album_id = $('#num_album').text();
+
+  data = {};
+  data.album = album_id;
+  data.num_page = num_page
+  data.page_place = page_place;
+  data.photo_id = photo_id;
+
+  console.log(data); 
+
+  $('.trash_img').css('visibility', 'hidden');
+};
+
+function handleDragToDelete(){
+  $('.trash_img').css('visibility', 'visible');
+  // console.log('drag to delete');
+};

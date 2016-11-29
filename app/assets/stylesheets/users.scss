@@ -2,12 +2,14 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+$primary-color: #222;
+
 .nav-side-menu {
   overflow: auto;
   font-family: verdana;
   font-size: 12px;
   font-weight: 200;
-  background-color: #222;
+  background-color: $primary-color;
  /* position: fixed;*/
   top: 0px;
   /*width: 250px;*/
