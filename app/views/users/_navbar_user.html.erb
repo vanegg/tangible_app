@@ -19,9 +19,10 @@
             <%=link_to "Mis álbumes", user_albums_path(current_user) %>
         </li>                          
 
-        <li  data-toggle="collapse" data-target="#products" class="collapsed active">
-          <a href="#"><i class="fa fa-lg"></i> Image Galleries <span class="arrow"></span></a>
-        </li>
+        <li  data-toggle="collapse" data-target="#products" class="collapsed">
+            <span class="arrow"><%=link_to "Mis Imagenes", current_user %></span>
+        </li> 
+
         <ul class="sub-menu collapse" id="albums">
           <li>New Service 1</li>
           <li>New Service 2</li>
@@ -29,12 +30,13 @@
         </ul>
 
         <li data-toggle="collapse" data-target="#service" class="collapsed">
-          <a href="#"><i class="fa fa-order fa-lg"></i> Order History <span class="arrow"></span></a>
+          <span class="arrow"><%=link_to "Mis Pedidos", orders_path %><span>
         </li>
         
-        <li data-toggle="collapse" data-target="#new" class="collapsed">
-          <a href="#"><i class="fa fa-address fa-lg"></i> Address book <span class="arrow"></span></a>
+        <li data-toggle="collapse" data-target="#service" class="collapsed">
+          <span class="arrow"><%=link_to "Direcciones", "" %><span>
         </li>
+        
         <ul class="sub-menu collapse" id="new">
           <li>New New 1</li>
           <li>New New 2</li>

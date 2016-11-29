@@ -3,48 +3,41 @@
     <div class="col-md-12">
       <div class="row">
         <div class="col-md-3">
-        <%= render 'users/navbar_user'%>
+          <%= render 'users/navbar_user'%>
         </div>
         <div class="col-md-9">
-
-        <h1 class= "page-title">
-          <span class= 'base'> My albums</span>
-        </h1>
-
-    		<div class= "block">
-    			<div class = "block-title order">
-    				<h4><strong> Albums</strong></h4>
-    			</div>
-    		</div>
-        <div class="pre-scrollable">
-      		<table id="my-albums-table">
-      			<thead>
-      				<th scope= "col" class= "col id"> Album</th>
-      				<th scope= "col" class= "col name"> Album name</th>
-      				<th scope= "col" class= "col show delete"></th>
-      			</thead>
-      			<%if current_user.albums.length <= 0%>
-          </table>
-          		<h5>¡Ups! Aún no tienes álbumes creados</h5>	
-            <%else%>
-          		<tbody>
-        				<%current_user.albums.each do |album|%>
-          				<tr>
-          					<td><%=album.id%></td>
-          					<td><%=album.title%></td>
+          <table class="table">
+            <thead>
+              <tr>
+                <th>#ID</th>
+                <th>Album</th>
+                <th></th>
+                <th></th>
+              </tr>
+            </thead>
+            <% if current_user.albums.length <= 0 %>
+              </table>
+              <h5>¡Ups! Aún no tienes álbumes creados</h5>  
+            <% else %>
+              <tbody>
+                <% current_user.albums.each do |album| %>
+                  <tr>
+                    <td><%=album.id%></td>
+                    <td><%=album.title%></td>
                     <td>
-                      <%= link_to 'Show', user_album_path(current_user, album) %>/
-                      <%= link_to 'Delete', user_album_path(current_user, album), method: "delete" %>
+                      <%= link_to ' Seguir_editando', user_album_path(current_user, album,), class: "glyphicon glyphicon-edit" %>
                     </td>
-          				</tr>
-                <%end%>
-          		</tbody>
-          </table>
-        </div>
-            <%end%>
-      		<%=link_to "Crear album", user_albums_path(current_user), method: "post" %>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+                    <td>
+                      <%= link_to ' Borrar', user_album_path(current_user, album), method: "delete", class: "glyphicon glyphicon-remove" %>
+                    </td>
+                  </tr>
+                <% end %>
+              </tbody>
+              </table>
+            <% end %> 
+          <%=link_to "Crear album", user_albums_path(current_user), method: "post" %>
+        </div> <!-- col-md-9 -->
+      <div> <!-- row -->
+    </div> <!-- col-md-12 -->
+  </div><!-- row -->
+</div><!-- container -->

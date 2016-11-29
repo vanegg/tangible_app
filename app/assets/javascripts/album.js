@@ -15,6 +15,11 @@ $(document).on('ready turbolinks:load',function(ev){
   	
   });
 
+  $('#terminar-album').on('click', function(event){
+    event.preventDefault();
+
+  });
+
 });
 
 function updateTitle(){
