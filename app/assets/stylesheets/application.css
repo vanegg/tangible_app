@@ -18,6 +18,15 @@ body {
   font: sans-serif !important;
 }
 
+h1 {
+  color: #F78181;
+}
+
+p {
+  text-align: justify;
+  text-justify: auto;
+}
+
 @media (min-width: 1600px ){
 .container {
      width: 1400px !important;

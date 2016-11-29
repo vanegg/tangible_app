@@ -1,7 +1,7 @@
 <%= form_for(@user) do |f| %>
   <%= render 'shared/error_messages', object: @var = @user %>
 
-  <%= f.label :name %>
+  <%= f.label :nombre %>
   <%= f.text_field :name, class: 'form-control' %>
 
   <%= f.label :email %>
@@ -9,11 +9,11 @@
 
   <p>Cambiar contraseña:</p>
 
-  <%= f.label :password %>
+  <%= f.label :nueva_contraseña %>
   <%= f.password_field :password, class: 'form-control' %>
 
-  <%= f.label :password_confirmation %>
+  <%= f.label :confirmación_contraseña %>
   <%= f.password_field :password_confirmation, class: 'form-control' %>
 
-  <%= f.submit yield(:button_text), class: "btn btn-primary" %>
+  <%= f.submit yield(:button_text), class: "btn btn-medium btn-default" %>
 <% end %>
