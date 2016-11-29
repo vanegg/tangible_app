@@ -2,6 +2,54 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+$gray-medium-light: #eaeaea;
+$primary-color: #9d9d9d;
+$primary-dark-color: #F1F1F1;
+$secondary-color: #F78181;
+
+
+/* DIM SCREEN AND DISPLAY MESSAGE IN CENTER*/
+#dim-screen {
+  display:    none;
+  z-index:    10000;
+  position:   fixed;
+  padding:    0;
+  margin:     0;
+  top:        0;
+  left:       0;
+  width:      100%;
+  height:     100%;
+  background: rgba(255,255,255,.5);
+}
+#dim-message {
+  display:  none;
+  z-index:  10001;
+  position: fixed;
+  padding:  0;
+  margin:   0;
+  top:      50%;
+  left:     50%;
+  transform: translate(-50%, -50%);
+  width:    300px;
+  border-top:    solid 2px $secondary-color;
+  border-bottom: solid 2px $secondary-color;
+  text-align: center;
+  background-color: white;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+#dim-message a {
+  font-size: 17px;
+  color: $secondary-color;
+  border: solid 2px $secondary-color;
+  display: inline-block;
+  margin: 5px;
+  padding: 3px;
+  text-align: center;
+  text-decoration: none;
+}
+/* DIM SCREEN END END END*/
+
 #custom_carousel .item  .top {
   overflow:hidden;
   min-height:300px;
