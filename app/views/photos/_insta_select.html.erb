@@ -1,0 +1,33 @@
+<div class="modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"> 
+  <div class="modal-dialog" style="overflow-y: scroll; max-height:85%;  margin-top: 50px; margin-bottom:50px;"> 
+    <div class="modal-content"> 
+      <%= form_for [current_user,@photo], :photo => user_photos_path(current_user.id), html: { multipart: true } do |f| %>   
+      <div class="modal-header"> 
+          <h3 class="modal-title">
+            <%= @client.user.username %><%= image_tag(@client.user.profile_picture) %>
+            <%= check_box_tag("remote_photo_url[]", @client.user.profile_picture) %>
+          </h3> 
+      </div> 
+        <div class="modal-body">
+          <div class="instagram user_photos">
+            <div class="checkbox-inline">
+              <% @client.user_recent_media.each_with_index do |media_item, index| %>
+                  <%= image_tag (media_item.images.thumbnail.url) %>
+                  <%= check_box_tag("remote_photo_url[]", media_item.images.thumbnail.url) %>
+                  <br>
+              <% end %>
+            </div>
+          </div>
+        </div> 
+        <div class="modal-footer">
+          Elegi las fotos que deseas para tu album
+          <button>
+            <em type="submit" id="download" class="glyphicon glyphicon glyphicon-check"> Agregar fotos</em>
+          </button>
+           <button id="cancel"> Cancelar </button>
+          <%#= submit_tag("Done", id: "download", class: "glyphicon glyphicon glyphicon-check") %>
+        </div>   <!-- modal-footer -->
+      <% end %>
+    </div>   <!-- modal-content -->
+  </div>   <!-- modal-dialog -->
+</div> <!-- modal -->

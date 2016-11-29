@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <script src="https://use.fontawesome.com/5727ae5a04.js"></script>
     <title><%= full_title(yield(:title)) %></title>
     <%= render 'layouts/rails_default' %>
     <%= render 'layouts/shim' %>
   </head>
   <body>
     <div class="background-image">
-      <% image_tag('images/Wood.jpg')%>
+      <%= image_tag('Wood.jpg', class: "fullscreen-image") %>
     </div>
     <%= render 'layouts/header' %>
     <div class="container">
