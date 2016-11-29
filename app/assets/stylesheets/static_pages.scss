@@ -11,7 +11,7 @@ $secondary-color: #F78181;
 .navbar-inverse {
 	border-bottom: 0px white;
 	background-color: #F1F1F1 !important;
-	height: 70px ;
+	height: 70px;
 }
 
 .navbar-inverse >.container{
@@ -57,6 +57,12 @@ $secondary-color: #F78181;
     color: #F78181;
     text-decoration: none;
   }
+}
+/*STATIC PAGES*/
+.title-page {
+	color: $secondary-color;
+	border-bottom: 2px solid;
+	padding-bottom: 15px;
 }
 
 /*HOME*/
