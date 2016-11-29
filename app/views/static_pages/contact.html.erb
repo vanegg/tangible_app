@@ -1,96 +1,112 @@
 <% provide(:title, "Contacto") %>
 
+<!-- Contact with Map - START -->
+<!-- <div class="container"> -->
+    <div class="row">
+        <div class="col-md-6 ">
+            <div class="well well-sm">
+                <form class="form-horizontal" method="post">
+                    <fieldset>
+                        <legend class="text-center header">Contactarnos</legend>
+                        <div class="form-group">
+                            <div class="col-md-10 col-md-offset-1">
+                                <input id="fname" name="name" type="text" placeholder="Nombre" class="form-control">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-10 col-md-offset-1">
+                                <input id="lname" name="name" type="text" placeholder="Apellido" class="form-control">
+                            </div>
+                        </div>
 
-<section id="contact" class="contact-section">
-           <div class="container">
-               <div class="row">
-                   <div class="col-xs-12 text-center">
-                       <h2 class="section-title">¿Necesitas ayuda?<br><br> (01 55) 5211.6931</h2>
-                       <p class="sub-title">El objetivo de todo este sitio es justamente apoyarte en lo que necesites <br>Desde pequeños hasta grandes proyectos son todo un reto para que destaques de tu competencia.</p>
-                   </div><!-- /.col-xs-12 -->
-               </div><!-- /.row -->
+                        <div class="form-group">
+                            <div class="col-md-10 col-md-offset-1">
+                                <input id="email" name="email" type="text" placeholder="Email" class="form-control">
+                            </div>
+                        </div>
 
+                        <div class="form-group">
+                            <div class="col-md-10 col-md-offset-1">
+                                <input id="phone" name="phone" type="text" placeholder="Celular" class="form-control">
+                            </div>
+                        </div>
 
-               <div class="row margin-top-50">
-                   <div class="col-xs-12 text-center">
-                       <form name="contact-form" id="contactForm" action="sendemail.php" method="POST">
-                           <div class="row">
-                               <div class="col-md-4">
-                                   <div class="form-group">
-                                     <label class="sr-only" for="name">Nombre</label>
-                                     <input type="text" name="name" class="form-control" id="name" placeholder="Tu nombre">
-                                   </div>
-                               </div>
-                               <div class="col-md-4">
-                                   <div class="form-group">
-                                     <label class="sr-only" for="email">Email</label>
-                                     <input type="email" name="email" class="form-control" id="email" placeholder="Tu email">
-                                   </div>
-                               </div>
-                               <div class="col-md-4">
-                                   <div class="form-group">
-                                     <label class="sr-only" for="subject">Asunto</label>
-                                     <input type="text" name="subject" class="form-control" id="subject" placeholder="Tu telefono">
-                                   </div>
-                               </div>
-                           </div>
+                        <div class="form-group">
+                            <div class="col-md-10 col-md-offset-1">
+                                <textarea class="form-control" id="message" name="message" placeholder="Ingresar tu consulta aqui." rows="7"></textarea>
+                            </div>
+                        </div>
 
-                           <div class="form-group">
-                             <label class="sr-only" for="message">Mensaje</label>
-                             <textarea name="message" class="form-control" id="message" rows="7" placeholder="Tu mensaje, describenos un poco que deseas hacer ..."></textarea>
-                           </div>
-
-                           <button type="submit" name="submit" class="btn btn-primary btn-lg">Enviar</button>
-                       </form>
-                   </div><!-- /.col-xs-12 -->
-               </div><!-- /.row -->
-           </div><!-- /.container -->
-       </section>
-
-
-
-<div class="container">
-  <div class="row">
-    <div
-      <div id="map-outer" class="col-md-12">
-          <div id="address" class="col-md-4">
-            <h4><strong>Contactanos</strong></h4>
-            <address>
-            <strong>Realidad Tangible</strong><br>
-                06700<br>
-                Roma Norte<br>
-                CDMX<br>
-                <abbr>T:</abbr> +39 041 240 5411
-           </address>
-          </div>
-        <div id="map-container" class="col-md-8"></div>
-      </div><!-- /map-outer -->
-  </div> <!-- /row -->
- 
-  <div class="row">
-  <form class="form-horizontal" name="commentform">
-    <div class="form-group">
-        <div class="col-md-4">
-            <input type="text" class="form-control" id="first_name" name="first_name" placeholder="Nombre"/>
+                        <div class="form-group">
+                            <div class="col-md-12 text-center">
+                                <button type="submit" class="btn btn-default btn-md">Enviar</button>
+                            </div>
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
         </div>
-        <div class="col-md-4">
-            <input type="text" class="form-control" id="last_name" name="last_name" placeholder="Apellido"/>
-        </div>
-        <div class="col-md-4 input-group">
-        <span class="input-group-addon">@</span>
-            <input type="email" class="form-control" id="email" name="email" placeholder="Email"/>
+     <!--  </div>
+      <div class="row"> -->
+        <div class="col-md-6 ">
+            <div>
+                <div class="panel panel-default">
+                    <div class="text-center header">Nuestra Oficina</div>
+                    <div class="panel-body text-center">
+                        <h4>Direccion</h4>
+                        <div>
+                        2311 Avenida Chapultepec<br />
+                        CDMX, Mexico<br />
+                        #(55) 1234 1234<br />
+                        soporte@realidadtangible.org<br />
+                        </div>
+                        <hr />
+                        <div id="map1" class="map">
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
-    <div class="form-group">
-        <div class="col-md-12">
-            <textarea rows="6" class="form-control" id="comments" name="comments" placeholder="Tu pregunta o comentario"></textarea>
-        </div>
-    </div>
-    <div class="form-group">
-        <div class="col-md-6">
-            <button type="submit" value="Submit" class="btn btn-warning pull-right">Enviar</button>
-        </div>
-    </div>
-</form>
-</div><!-- /row -->
-</div><!-- /container -->
+<!-- </div>  --> <!-- container -->
+
+
+<script src="http://maps.google.com/maps/api/js?sensor=false"></script>
+
+<script type="text/javascript">
+    jQuery(function ($) {
+        function init_map1() {
+            var myLocation = new google.maps.LatLng(19.423338, -99.165094);
+            var mapOptions = {
+                center: myLocation,
+                zoom: 16
+            };
+            var marker = new google.maps.Marker({
+                position: myLocation,
+                title: "Property Location"
+            });
+            var map = new google.maps.Map(document.getElementById("map1"),
+                mapOptions);
+            marker.setMap(map);
+        }
+        init_map1();
+    });
+</script>
+
+<style>
+    .map {
+        min-width: 300px;
+        min-height: 300px;
+        width: 100%;
+        height: 100%;
+    }
+
+    .header {
+        background-color: #F5F5F5;
+        /*color: $secondary-color;*/
+        height: 70px;
+        font-size: 27px;
+        padding: 10px;
+    }
+</style>
+<!-- Contact with Map - END -->
