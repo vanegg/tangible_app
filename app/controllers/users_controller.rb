@@ -12,8 +12,7 @@ class UsersController < ApplicationController
     @user = current_user
     @photo = Photo.new
     if session[:access_token]
-      client = Instagram.client(:access_token => session[:access_token])
-      @insta_photos = client.user_recent_media
+      @client = Instagram.client(:access_token => session[:access_token])
     end
   end
 
@@ -57,20 +56,11 @@ class UsersController < ApplicationController
     client = Instagram.client(:access_token => session[:access_token])
     user = client.user
     @insta_photos = client.user_recent_media
-    # html = "<h1>#{user.username}'s recent media</h1>"
-    # for media_item in client.user_recent_media
-    #   html << "<div style='float:left;'><img src='#{media_item.images.thumbnail.url}'><br/> <a href='/media_like/#{media_item.id}'>Like</a>  <a href='/media_unlike/#{media_item.id}'>Un-Like</a>  <br/>LikesCount=#{media_item.likes[:count]}</div>"
-    # end
-    # html
   end
 
   def insta_popular_media
     client = Instagram.client(:access_token => session[:access_token])
-    html = "<h1>Get a list of the overall most popular media items</h1>"
-    for media_item in client.media_popular
-      html << "<img src='#{media_item.images.thumbnail.url}'>"
-    end
-    html
+    @pop_photos = client.media_popular
   end
 
   private

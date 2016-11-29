@@ -1,5 +1,5 @@
 class Photo < ApplicationRecord
-
+  attr_accessor :remote_photo_url
 	# validates :photo, uniqueness: true  #da error 'cant cast PhotoUploader'
 	has_many :locations
 	has_many :pages, through: :locations

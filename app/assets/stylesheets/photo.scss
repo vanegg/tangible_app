@@ -1,3 +1,4 @@
+/* images on users#show profile */
 .display_photos {
   padding: 10px;
 }
@@ -7,5 +8,10 @@
   padding-right: 10px;
 }
 
-.instagram.login {
+/* full screen background image */
+.fullscreen-image {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  z-index: -1000;
 }

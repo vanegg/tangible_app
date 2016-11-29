@@ -141,3 +141,16 @@ $primary-color: #222;
   }
 }
 
+
+/* CSS para modal que baja para seleccionar photos instagram*/
+.modal{
+    display: hidden;
+    /*display: block !important;*/
+}
+.modal-dialog{
+      overflow-y: initial !important
+}
+.modal-body{
+  height: 250px;
+  overflow-y: auto;
+}

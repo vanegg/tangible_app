@@ -3,13 +3,25 @@ class PhotosController < ApplicationController
 	def create
 		@user = User.find(params[:user_id])
     err_msg = []
-
-    photo_params[:photo].each do |photo_object|
-      @photo = Photo.new(photo: photo_object)
-      if @photo.save
-        @user.photos << @photo
-      else
-        err_msg << photo_object.original_filename
+    if params[:photo]
+      photo_params[:photo].each do |photo_object|
+        @photo = Photo.new(photo: photo_object)
+        if @photo.save
+          @user.photos << @photo
+        else
+          err_msg << photo_object.original_filename
+        end
+      end
+    else
+      p "entrar a else"
+      params[:remote_photo_url].each do |photo_object|
+        @photo = Photo.new(remote_photo_url: photo_object)
+        if @photo.save
+          p @photo
+          @user.photos << @photo
+        else
+          err_msg << "Error con Instagram"
+        end
       end
     end
 
