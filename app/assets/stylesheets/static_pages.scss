@@ -71,20 +71,20 @@ body .container-fluid {
 
 /*HOME*/
 /* carousel */
-.carousel {
+.carousel-home {
 	width: 102.2%;
 	margin-top: -15px;
 	margin-right: 15px;
 	margin-left: -15px;
 }
 
-.carousel-inner {
+.carousel-inner-home {
 	height: 655px;
 
 }
 
-.carousel-inner > .item > img,
-.carousel-inner > .item > a > img {
+.carousel-inner-home > .item > img,
+.carousel-inner-home > .item > a > img {
 	object-fit: fill;
 	.center {
     display: block;
