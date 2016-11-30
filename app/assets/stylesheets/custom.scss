@@ -61,6 +61,15 @@ p {
   font-size: 1.1em;
   line-height: 1.7em;
 }
+/* header */
+a.profile-toggle{
+  background-color: $secondary-color;
+  color: white !important;
+  &:hover{
+    background-color: white;
+    color: $secondary-color !important;
+  }
+}
 
 /* footer */
 

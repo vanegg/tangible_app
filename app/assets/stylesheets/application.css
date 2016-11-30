@@ -27,6 +27,9 @@ p {
   text-justify: auto;
 }
 
+.current_name, .gravatar {
+  display: block;
+}
 
 @media (min-width: 1600px ){
 .container {

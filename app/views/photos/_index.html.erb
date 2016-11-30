@@ -1,7 +1,11 @@
 <div class="photoPile">
-	<% current_user.photos.reverse.each do |photo| %>
-		<div>			
-	  	<img class="draggable photo-drag-pile" id="<%= photo.photo_url(:large)%>" src="<%= photo.photo_url(:thumb) %>">
-		</div>
+	<% if current_user.photos.length == 0 %>
+		<p><span>¡Oops! Aun no tienes fotos</span></p>
+	<% else %>
+		<% current_user.photos.reverse.each do |photo| %>
+			<div>			
+		  	<img class="draggable photo-drag-pile" id="<%= photo.photo_url(:large)%>" src="<%= photo.photo_url(:thumb) %>">
+			</div>
+		<% end %>
 	<% end %>
 </div>
