@@ -3,11 +3,12 @@
 
   <%= f.label :nombre %>
   <%= f.text_field :name, class: 'form-control' %>
-
   <%= f.label :email %>
   <%= f.email_field :email, class: 'form-control' %>
 
+  <%if @edit == 'true'%>
   <p>Cambiar contraseña:</p>
+  <%end%>
 
   <%= f.label :nueva_contraseña %>
   <%= f.password_field :password, class: 'form-control' %>

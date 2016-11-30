@@ -9,11 +9,15 @@
                 <%= gravatar_for(current_user, options = { size: 100 }) %>
                 <br><br><br><br><br>
                   <h4 class='current_name'>
-                   <span><%= current_user.name %></span>
+                   <%= link_to current_user.name, user_path(current_user)%>
                   </h4>
             </section>
+
+                <h6>
+                  <%= link_to 'Regresar a Mis álbumes', user_albums_path(current_user,@album)%>
+                </h6>
        <!--    </aside> -->
-          <h4>Mis Photos</h4>
+          <h4>Mis Fotos</h4>
           <div class="pre-scrollable">
             <%= render 'photos/index' %> 
           </div>

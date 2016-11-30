@@ -19,6 +19,8 @@
 //= require_tree .
 
 $(document).on('ready',function(ev){
+
+  $(".alert" ).fadeOut(4000);
 	// var items = $(".nav li").length;
  //    var leftRight=0;
  //    if(items>5){
@@ -100,7 +102,7 @@ function handleDrop(event, ui){
 
   $.post('/add_page',data, function(id_photo) {
     console.log('callback:' + id_photo);   
-    _this.empty().append("<img class='photo-in-album' id='" +  id_photo + "' src=" + url +" style='height: 100%; width: 100%; object-fit: fill'/><a class='carousel-control' href=''>x</a>");
+    _this.empty().append("<img class='photo-in-album' id='" +  id_photo + "' src=" + url +" style='height: 100%; width: 100%; object-fit: fill'/>");
     dragToDelete('.photo-in-album');
   });
 
