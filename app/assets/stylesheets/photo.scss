@@ -21,10 +21,7 @@ $secondary-color: #F78181;
   margin-top: 20px;
 }
 
-/* UPLOAD photos*/
-.instagram.login {
-	text-align: center;
-}
+/* UPLOAD photos from computer*/
 #upload-photo{
   background-color: white;
 }
@@ -35,8 +32,21 @@ $secondary-color: #F78181;
 #upload {
   display: none;
 }
+/* UPLOAD photos END */
 
-/* UPLOAD photos END END END */
+/* DOWNLOAD photos instagram */
+.instagram a {
+  font-size: 15px;
+  padding: 7px;
+  padding-left: 20px;
+  padding-right: 60px;
+}
+#insta_link strong {
+  font-size: 15px;
+  padding-left: 20px;
+  padding-right: 60px;
+}
+/* DOWNLOAD photos END */
 
 
 /* full screen background image */

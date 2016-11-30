@@ -14,22 +14,17 @@
           <div class="row">
             <h1 class='title-page'>Mis imágenes</h1>
             <div class="col-md-6">
+              <h5>Añadir fotos de tu compu:</h5>
               <%= render 'photos/new' %>
             </div>
-              <% if session[:access_token] %>
-                <div class=" col-md-6 instagram get_photos">
-                  <strong>
-                    <i class="fa fa-instagram fa-lg" aria-hidden="true"></i>
-                    <%= @client.user.username %></strong>
-                    <br>
-                  <%= link_to "Elegir fotos de mi Instagram", "" , id: "insta_link" %>
-                </div>
-              <% else %>
-                <div class="col-md-6 instagram login">
-                  <strong><i class="fa fa-instagram fa-lg" aria-hidden="true"></i></strong>
-                  <%= link_to "Sign in with Instagram", instagram_path, class: "btn btn-medium btn-default" %>
-                </div> <!-- "col-md-4 instagram login" -->
-              <% end %>
+            <div class=" col-md-6 instagram">
+              <h5>Añadir fotos de Instagram:</h5>
+                  <% if session[:access_token] %>
+                    <a href="" class="btn btn-default" id="insta_link"><strong><i class="fa fa-instagram fa-lg" ></i> <%= @client.user.username %></strong></a>
+                  <% else %>
+                    <a href=<%=instagram_path%> class="btn btn-default"><strong><i class="fa fa-instagram fa-lg" ></i></strong> Ingresar a tu Instagram</a>
+                  <% end %>
+            </div> <!-- "col-md-4 instagram" -->
             </div>
             <div class="row index_photos">
               <div class="col-md-12">
@@ -38,10 +33,11 @@
                     <%= render 'photos/display' %>    
                   </div>
                 <% end %>
-              </div>
-            </div> <!-- second row -->
+              </div> <!-- col-md-12 -->
+            </div> <!-- row -->
+          <!-- </div>  row ????????? --> 
         </div> <!-- col 9 -->
-      </div> <!-- first row  -->
+      </div> <!-- row  -->
     </div> <!-- col 12 -->
   </div> <!-- row -->
 </div>  <!-- container -->
