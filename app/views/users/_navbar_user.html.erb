@@ -1,14 +1,19 @@
 <div class="nav-side-menu">
   <aside>
     <section class="user_info">
-      <h1>
-        <%= gravatar_for current_user %>
+        <%= gravatar_for(current_user, options = { size: 180 }) %>
+        <br>
+        <br>
+        <br>
+        <br>
+      <h1 class='current_name'>
         <%= current_user.name %>
       </h1>
     </section>
   </aside>
-    <i class="fa fa-bars fa-2x toggle-btn" data-toggle="collapse" data-target="#menu-content"></i>
-            
+  <br>
+  <br>
+  <br>            
   <div class="menu-list">
       <ul id="menu-content" class="menu-content collapse out">
         <li  data-toggle="collapse" data-target="#products" class="collapsed">
@@ -37,12 +42,6 @@
           <span class="arrow"><%=link_to "Direcciones", "" %><span>
         </li>
 
-     <!--    <li data-toggle="collapse" data-target="#products" class="collapsed">
-          <%#=link_to "Detalles de mi cuenta", edit_user_path(current_user) %>
-        </li>
-
-        <li data-toggle="collapse" class="collapsed">
-          <a rel="nofollow" data-method="delete" href="/logout"><i class="fa fa-lg"></i> Logout</a> -->
         </li>
       </ul>
   </div>

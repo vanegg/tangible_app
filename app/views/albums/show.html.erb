@@ -2,36 +2,28 @@
 <div class="container-fluid">
   <div class="row">
     <div class="col-md-12">
-      <div class="row">
-      <!--   <div class="col-md-1" id="menu">
-          <div class="btn-group btn-group-vertical btn-group-sm">
-            <button class="btn btn-default" type="button">
-              <em class="glyphicon glyphicon-picture"></em>
-            </button> 
-            <button class="btn btn-default" type="button">
-              <em class="glyphicon glyphicon-fullscreen"></em>
-            </button> 
-            <button class="btn btn-default" type="button">
-              <em class="glyphicon glyphicon-paperclip"></em>
-            </button> 
-            <button class="btn btn-default" type="button">
-              <em class="glyphicon glyphicon-duplicate"></em>
-            </button>
-            <div class="arrow-right"></div>
-          </div>
-        </div> -->
+      <div class="row">        
         <div class="col-md-2">
+           <!-- <aside> -->
+            <section class="user_info">
+                <%= gravatar_for(current_user, options = { size: 100 }) %>
+                <br><br><br><br><br>
+                  <h4 class='current_name'>
+                   <span><%= current_user.name %></span>
+                  </h4>
+            </section>
+       <!--    </aside> -->
           <h4>Mis Photos</h4>
           <div class="pre-scrollable">
             <%= render 'photos/index' %> 
           </div>
         </div>
         <div class="album- carousel col-md-9">
-        <div class="row" id="album-title">          
-          <%= form_for [current_user, @album], class: 'title_form' do |f| %>
-          <%= f.text_field :title, placeholder: "Título del álbum...", value: @album.title,  class: "form-control", id:'title_field'%>
-          <% end %>          
-        </div>
+          <div class="row" id="album-title">          
+            <%= form_for [current_user, @album], class: 'title_form' do |f| %>
+            <%= f.text_field :title, placeholder: "Título del álbum...", value: @album.title,  class: "form-control", id:'title_field'%>
+            <% end %>          
+          </div>
           <%= render 'albums/album_carousel' %>
         </div>
       </div>
@@ -39,3 +31,4 @@
   </div>
 </div>
 
+</div>
