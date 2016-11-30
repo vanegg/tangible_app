@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   get  '/signup',           to: 'users#new'
   post '/signup',           to: 'users#create'
   get '/orders',            to: 'users#orders'
+  get '/checkout',          to: 'users#checkout'
   get    '/login',          to: 'sessions#new'
   post   '/login',          to: 'sessions#create'
   delete '/logout',         to: 'sessions#destroy'

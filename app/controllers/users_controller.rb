@@ -38,7 +38,7 @@ class UsersController < ApplicationController
   def update
     @user = current_user
     if @user.update_attributes(user_params)
-       flash[:success] = "Cambios del profile has sido guardados"
+       flash[:success] = "Cambios del profile han sido guardados"
       redirect_to @user
     else
       render 'edit'
@@ -47,13 +47,19 @@ class UsersController < ApplicationController
 
   def destroy
     User.find(params[:id]).destroy
-    flash[:success] = "Usuario ha sido "
+    flash[:success] = "Tu cuenta ha sido borrado"
     redirect_to users_url
   end
 
   def orders
-    #users completed albums
-    @orders = current_user.albums.where("status > ?", 0)
+    #users completed albums, should be > than 1
+    @orders = current_user.albums.where("status > ?", 1)
+  end
+
+  def checkout
+    album = Album.find(params[:album])
+    album.update_attribute(:status, 2)
+    redirect_to orders_path
   end
 
   private
@@ -75,8 +81,6 @@ class UsersController < ApplicationController
 
     # Confirms the correct user.
     def correct_user
-      p params
-      p "*" * 50
       @user = User.find(params[:id])
       redirect_to(root_url) unless current_user?(@user)
     end

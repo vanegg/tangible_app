@@ -17,8 +17,9 @@ $(document).on('ready turbolinks:load',function(ev){
 
   $('#terminar-album').on('click', function(event){
     event.preventDefault();
+    a = $('#num_album').html();
     m = "<h4>Felicidades en completar tu album!</h4><br>"
-    button1 = "<a href='/orders'>Comprar</a>"
+    button1 = "<a href='/checkout?album=" + a + "'>Comprar</a>"
     button2 = "<a href=''>Oops! Seguir editando</a>"
     $('#dim-message').html(m + button2 + button1);
     $('#dim-screen').css('display', 'block');

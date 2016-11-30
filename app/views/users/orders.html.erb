@@ -22,14 +22,17 @@
                   <td><%= album.id %></td>
                   <td><%= album.title %></td>
                   <td><%= album.updated_at %></td>
-                  <td>terminando/procesando/enviado<%#= album.status %></td>
+                  <% if album.status == "2" %>
+                    <td>Procesando</td>
+                  <% elsif album.status == "3" %>
+                    <td>Enviado</td>
+                  <% end %>
                 </tr>
               <% end %>
             </tbody>
           </table>
         </div> <!-- col-md-9 -->
-      <div> <!-- row -->
+      </div> <!-- row -->
     </div> <!-- col-md-12 -->
   </div><!-- row -->
 </div><!-- container -->
-</div>
