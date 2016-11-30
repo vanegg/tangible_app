@@ -22,9 +22,9 @@
                   <td><%= album.id %></td>
                   <td><%= album.title %></td>
                   <td><%= album.updated_at %></td>
-                  <% if album.status == "2" %>
+                  <% if album.status == 2 %>
                     <td>Procesando</td>
-                  <% elsif album.status == "3" %>
+                  <% elsif album.status == 3 %>
                     <td>Enviado</td>
                   <% end %>
                 </tr>
