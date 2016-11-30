@@ -1,12 +1,12 @@
-$(document).on('ready turbolinks:load',function(){
-  $('#custom_carousel').ready(function(){
+$(document).on('ready',function(){
+  $('#custom_carousel').on( 'ready', function(){
     album = $('#num_album').text();
     route = '/showpage?album=' + album + '&page=1'
     $.get(route);
   })
 
 
-  // listening to a lyout selection
+  // listening to a layout selection
   // replaces layout option with layout selected
   // stores page layout selection in database
   $('.select-layout li').on('click', function(){
@@ -33,6 +33,8 @@ $(document).on('ready turbolinks:load',function(){
   $( "body" ).on( "click", ".carousel-control.i", function(event) {
     page = $('.item.active').children().children().children().children().first().attr('id');
     album = $('#num_album').text();
+    console.log("page: " + page + ", album: " + album);
+    console.log($(this).attr("id"));
     if (($(this).attr("id") == "next" && page == 7) || ($(this).attr("id") == "prev" && page == 1)) {
       return
     } else {

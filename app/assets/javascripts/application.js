@@ -16,10 +16,9 @@
 //= require jquery-ui/droppable
 //= require jquery-ui/sortable
 //= require bootstrap
-//= require turbolinks
 //= require_tree .
 
-$(document).on('ready turbolinks:load',function(ev){
+$(document).on('ready',function(ev){
 	// var items = $(".nav li").length;
  //    var leftRight=0;
  //    if(items>5){

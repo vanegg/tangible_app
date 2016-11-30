@@ -1,4 +1,4 @@
-$(document).on('ready turbolinks:load',function(){
+$(document).on('ready',function(){
 
   $(".container").on("click", "#insta_link", function(event){
     event.preventDefault();
