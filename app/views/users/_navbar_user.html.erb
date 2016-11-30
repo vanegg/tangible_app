@@ -16,12 +16,12 @@
   <br>            
   <div class="menu-list">
       <ul id="menu-content" class="menu-content collapse out">
-        <li  data-toggle="collapse" data-target="#products" class="collapsed">
-            <%=link_to "Nuevo Album", user_albums_path(current_user), method: "post" %>
+        <li>
+          <span class="fa fa-plus fa-lg"><%=link_to "Nuevo Album", user_albums_path(current_user), method: "post" %></span>
         </li> 
 
-        <li  data-toggle="collapse" data-target="#products" class="collapsed">
-            <%=link_to "Mis álbumes", user_albums_path(current_user) %>
+        <li>
+            <span class="fa fa-book fa-lg"><%=link_to "Mis álbumes", user_albums_path(current_user) %></span>
         </li>                          
 
         <ul class="sub-menu collapse" id="albums">
@@ -30,16 +30,16 @@
           <li>New Service 3</li>
         </ul>
 
-        <li  data-toggle="collapse" data-target="#products" class="collapsed">
-            <span class="arrow"><%=link_to "Mis Imagenes", current_user %></span>
+        <li>
+          <span class="fa fa-picture-o fa-lg"><%=link_to "Mis Fotos", current_user %></span>
         </li> 
 
-        <li data-toggle="collapse" data-target="#service" class="collapsed">
-          <span class="arrow"><%=link_to "Mis Pedidos", orders_path %><span>
+        <li>
+          <span class="fa fa-shopping-cart fa-lg"><%=link_to "Mis Pedidos", orders_path %><span>
         </li>
         
-        <li data-toggle="collapse" data-target="#service" class="collapsed">
-          <span class="arrow"><%=link_to "Direcciones", "" %><span>
+        <li>
+          <span class="fa fa-address-card-o fa-lg"><%=link_to "Direcciones", "" %><span>
         </li>
 
         </li>
