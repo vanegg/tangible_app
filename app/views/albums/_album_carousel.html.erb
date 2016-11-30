@@ -20,55 +20,55 @@
 						</div>
 					</div>
 				</div>
-			<% i = 3%>
-			<%(@album.pages.length / 2 - 1).times do |n|%>
-				<div class="item">
-					<div class="container-fluid">
-						<div class="row">
-							<div class="top  col-xs-6">
-							 <div id= '<%=i%>' class= 'square_album left'>
-									<%= render "pages/select_layout", object: @id = i %>
-							 </div>
-							</div>
-							<div class="top  col-xs-6">
-								<div id= '<%=i+1%>' class= 'square_album right'>
-									<%= render "pages/select_layout", object: @id = i+1 %>
+				<% i = 3%>
+				<%(@album.pages.length / 2 - 1).times do |n|%>
+					<div class="item">
+						<div class="container-fluid">
+							<div class="row">
+								<div class="top  col-xs-6">
+								 <div id= '<%=i%>' class= 'square_album left'>
+										<%= render "pages/select_layout", object: @id = i %>
+								 </div>
+								</div>
+								<div class="top  col-xs-6">
+									<div id= '<%=i+1%>' class= 'square_album right'>
+										<%= render "pages/select_layout", object: @id = i+1 %>
+									</div>
 								</div>
 							</div>
-						</div>
-					</div>            
+						</div>            
+					</div>
+					<% i += 2%>
+				<%end%>			
+			</div>		
+		</div>
+		<p id='num_album'><%=@album.id%></p>
+
+		<%= link_to "‹","", remote: true, class: "izq carousel-control i", id:'prev' %>
+		<%= link_to "›","", remote: true, class: "der carousel-control i", id:'next' %>
+
+		<div class="col-xs-12">
+			<div class="row">
+				<div class="controls  ui-widget-content col-xs-10">
+					<ul class="nav ui-widget-header">
+						<%i = 1%>
+						<%(@album.pages.length / 2).times do |n|%>
+							<% if n == 0%>
+								<li data-target="#custom_carousel" data-slide-to="<%=n%>" id="<%=i%>" class="mini active"><a data-remote="true" href="">
+							<% else %>
+								<li data-target="#custom_carousel" data-slide-to="<%=n%>" id="<%=i%>" class="mini" ><a data-remote="true" href="">
+							<%end%>
+							<%=image_tag("void_layout.png", alt: "layout_0")%><small>Página <%=i%> - <%=i + 1%></small></a></li>
+							<%i += 2%>
+						<%end%>		
+						<div class="pages_section"></div>	  
+					</ul>
 				</div>
-				<% i += 2%>
-			<%end%>
-			
-	</div>
-
-	<p id='num_album'><%=@album.id%></p>
-
-	<%= link_to "‹","", remote: true, class: "izq carousel-control i", id:'prev' %>
-	<%= link_to "›","", remote: true, class: "der carousel-control i", id:'next' %>
-
-	<div class="col-xs-12">
-		<div class="row">
-			<div class="controls  ui-widget-content col-xs-10">
-				<ul class="nav ui-widget-header">
-					<%i = 1%>
-					<%(@album.pages.length / 2).times do |n|%>
-						<% if n == 0%>
-							<li data-target="#custom_carousel" data-slide-to="<%=n%>" id="<%=i%>" class="mini active"><a data-remote="true" href="">
-						<% else %>
-							<li data-target="#custom_carousel" data-slide-to="<%=n%>" id="<%=i%>" class="mini" ><a data-remote="true" href="">
-						<%end%>
-						<%=image_tag("void_layout.png", alt: "layout_0")%><small>Página <%=i%> - <%=i + 1%></small></a></li>
-						<%i += 2%>
-					<%end%>		
-					<div class="pages_section"></div>	  
-				</ul>
-			</div>
-			<div class="buttons_section col-xs-2">
-				<div class="">
-					<%= link_to(" Agregar pagina", "", id: 'agregar-pagina', class: "glyphicon glyphicon-plus" )%>
-					<%= link_to(" Listo! Hacer album Tangible", checkout_path, id: 'terminar-album', class: "glyphicon glyphicon-ok" )%>
+				<div class="buttons_section col-xs-2">
+					<div class="">
+						<%= link_to(" Agregar pagina", "", id: 'agregar-pagina', class: "glyphicon glyphicon-plus" )%>
+						<%= link_to(" Listo! Hacer album Tangible", checkout_path, id: 'terminar-album', class: "glyphicon glyphicon-ok" )%>
+					</div>
 				</div>
 			</div>
 		</div>
