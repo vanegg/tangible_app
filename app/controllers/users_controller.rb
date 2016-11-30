@@ -53,7 +53,7 @@ class UsersController < ApplicationController
 
   def orders
     #users completed albums, should be > than 1
-    @orders = current_user.albums.where("status > ?", 1)
+    @orders = current_user.albums.where.not(status: 1)
   end
 
   def checkout

@@ -17,7 +17,7 @@
               </tr>
             </thead>
             <tbody>
-              <% Album.where("status > ?", 1).each do |album| %>
+              <% Album.where.not(status: 1).each do |album| %>
                 <tr>
                   <td><%= album.id %></td>
                   <td><%= album.title %></td>
