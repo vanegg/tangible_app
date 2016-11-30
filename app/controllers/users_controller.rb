@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   before_action :logged_in_user, only: []
-  before_action :correct_user,   only: [:edit, :update, :show, :destroy, :index]
-  before_action :admin_user,     only: [:destroy, :admin_orders]
+  before_action :correct_user,   only: [:edit, :update, :show, :destroy]
+  before_action :admin_user,     only: [:destroy, :admin_orders, :index]
 
 
   def index
@@ -53,11 +53,7 @@ class UsersController < ApplicationController
 
   def orders
     #users completed albums
-    @orders = Album.where(user_id: current_user)
-  end
-
-  def admin_orders
-    @orders = Album.all
+    @orders = current_user.albums.where("status > ?", 0)
   end
 
   private
