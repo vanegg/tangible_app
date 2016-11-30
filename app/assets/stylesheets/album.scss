@@ -68,6 +68,10 @@ $secondary-color: #F78181;
   height:auto
 }
 
+.carousel-inner .container-fluid {
+ padding-top: 0px;
+}
+
 #custom_carousel .izq {
   position:absolute;
   left: -25px;
@@ -146,11 +150,11 @@ $secondary-color: #F78181;
 
 .album_section {
   padding: 10px;
-  background-color: #8D8D8D;
+  background-color: #BDBDBD;
 }
 
 .layout_album {
-  background-color: #8D8D8D;
+  background-color: #BDBDBD;
 }
 
 .buttons_section {
