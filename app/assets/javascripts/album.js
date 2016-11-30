@@ -4,8 +4,14 @@ $(document).on('ready',function(ev){
   doDroppable('.photoboard');
 
   $('#title_field').on('change', function(event){
-  	console.log('cambio');
     updateTitle();
+  });
+
+  // listening for photos selected
+  // simulates a click on update
+  // creates one step upload
+  $('#photo_photo').on('change', function(event){
+    $( "#upload" ).trigger( "click" );
   });
 
   num_album = $('#num_album').text();
@@ -29,11 +35,9 @@ $(document).on('ready',function(ev){
 });
 
 function updateTitle(){
-	console.log($('#title_field').val());
 	album = {};
 	album.id = $('#num_album').text();
 	album.title = $('#title_field').val();
 	$.post('/update_title',album, function(resp) {
-    console.log('callback:' + resp);
   });
 };

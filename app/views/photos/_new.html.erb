@@ -1,11 +1,7 @@
-<div id="upload-photo">
+<div id="upload-photo" class="btn btn-default">
   <%= form_for [current_user,@photo], :photo => user_photos_path(current_user.id), html: { multipart: true } do |f| %>
-  <%#= render 'shared/error_messages', object: @var = @photo %>    
-    <div class="field">
-      <%= f.file_field :photo, multiple: true %>
-    </div>
-    <div class="actions">
-      <%= f.submit 'Upload', :class => 'btn  btn-default', :id => 'upload' %>
-    </div>
+    <%#= render 'shared/error_messages', object: @var = @photo %>    
+    <%= f.file_field :photo, multiple: true %>
+    <%= f.submit 'Upload', :class => 'btn  btn-default', :id => 'upload' %>
   <% end %>
 </div>
