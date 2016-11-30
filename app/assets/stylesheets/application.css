@@ -37,17 +37,17 @@ p {
     }
 }
 
- .layout_2{
-  padding:60px;
+.layout_1{
+  margin-top: 5%;
+  padding:30px;
   box-sizing:border-box;
   text-align: center;
 }
 
-.layout_1{
-  margin-top: 30%;
-  padding:40px;
+ .layout_2{
+  padding:45px;
   box-sizing:border-box;
-  text-align: center;
+  text-align: center !important;
 }
 
 .layout_3{
@@ -59,14 +59,17 @@ p {
 
 .layout_1 > .photoboard {
   background-color: #F2F2F2;
-  height:130px;
+  display: inline-block;
+  width: 280px;
+  height: 280px;
   border: 2px dashed #A4A4A4;
   border-radius: 7%;  
 }
 
 .layout_2 > .photoboard {
+  margin-left: 55px;
   background-color: #F2F2F2;
-  height:130px;
+  height:150px;
   width: 250px;
   border: 2px dashed #A4A4A4;
   border-radius: 7%;
@@ -75,8 +78,8 @@ p {
 .layout_3 > .photoboard {
   background-color: #F2F2F2;
   display: inline-block;
-  height:148px;
-  width: 148px;
+  height:147px;
+  width: 147px;
   border: 2px dashed #A4A4A4;
   border-radius: 7%;  
 }
