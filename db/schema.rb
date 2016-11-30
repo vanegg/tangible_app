@@ -15,7 +15,7 @@ ActiveRecord::Schema.define(version: 20161114195307) do
   create_table "albums", force: :cascade do |t|
     t.string   "title",      default: "Album Sin Titulo"
     t.integer  "user_id"
-    t.string   "status",     default: "1"
+    t.integer  "status",     default: 1
     t.datetime "created_at",                              null: false
     t.datetime "updated_at",                              null: false
     t.index ["user_id"], name: "index_albums_on_user_id"
