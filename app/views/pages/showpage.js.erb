@@ -14,7 +14,7 @@ right_page = JSON.parse(decodeEntities( "<%=@right_urls%>" ));
 function appendHtml( hash, direction ) {
     for (var key in hash){
       var html = $(".square_album." + direction + "#" + hash['page']
-       + " #" + key + ".photoboard").append("<img src='" + hash[key] 
+       + " #" + key + ".photoboard").html("<img src='" + hash[key] 
        + "' style='height: 100%; width: 100%; object-fit: fill'>")
       var removeDotted = $(".square_album." + direction + "#" + hash['page']
        + " #" + key + ".photoboard").css('border', '0px');
