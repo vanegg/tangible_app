@@ -37,6 +37,26 @@ $secondary-color: #F78181;
   }  
 }
 
+/* make mi cuenta button standout */
+.navbar li #main-profile {
+  background-color: $secondary-color ;
+  color: white ;
+  &:hover{
+    box-shadow: 0 3px 0 white;
+    top: 3px;
+  };
+}
+
+/* make login button standout*/
+.navbar li #main-login {
+  background-color: $secondary-color ;
+  color: white ;
+  &:hover{
+    box-shadow: 0 3px 0 white;
+    top: 3px;
+  };
+}
+
 .navbar-inverse .navbar-nav > .open > a:focus  {
   background-color: #F78181;
   color: #fff;

@@ -16,11 +16,13 @@ function appendHtml( hash, direction ) {
       var html = $(".square_album." + direction + "#" + hash['page']
        + " #" + key + ".photoboard").append("<img src='" + hash[key] 
        + "' style='height: 100%; width: 100%; object-fit: fill'>")
+      var removeDotted = $(".square_album." + direction + "#" + hash['page']
+       + " #" + key + ".photoboard").css('border', '0px');
       
-      if (key == "0"){html}
-      else if(key == "1"){ html}
-      else if(key == "2"){ html}
-      else if(key == "3"){ html};
+      if (key == "0"){ html; removeDotted; }
+      else if(key == "1"){ html; removeDotted; }
+      else if(key == "2"){ html; removeDotted; }
+      else if(key == "3"){ html; removeDotted; };
     }
 };
 

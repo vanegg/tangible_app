@@ -1,5 +1,5 @@
 $(document).on('ready',function(){
-  $('#custom_carousel').on( 'ready', function(){
+  $('#custom_carousel').ready( function(){
     album = $('#num_album').text();
     route = '/showpage?album=' + album + '&page=1'
     $.get(route);
