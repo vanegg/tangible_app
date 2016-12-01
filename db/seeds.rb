@@ -1,22 +1,22 @@
-User.create!(name:  "Example User",
-             email: "example@realidadtangible.mx",
+User.create!(name:  "Vanessa GG",
+             email: "vanessa@realidadtangible.mx",
              password:              "foobar",
              password_confirmation: "foobar",
              admin:     true,
              activated: true,
              activated_at: Time.zone.now)
 
-3.times do |n|
-  name  = Faker::Name.name
-  email = "example-#{n+1}@realidadtangible.mx"
-  password = "password"
-  User.create!(name:  name,
-              email: email,
-              password:              password,
-              password_confirmation: password,
-              activated: true,
-              activated_at: Time.zone.now)
-end
+# 3.times do |n|
+#   name  = Faker::Name.name
+#   email = "example-#{n+1}@realidadtangible.mx"
+#   password = "password"
+#   User.create!(name:  name,
+#               email: email,
+#               password:              password,
+#               password_confirmation: password,
+#               activated: true,
+#               activated_at: Time.zone.now)
+# end
 
 # album = Album.new(title: "My weekend")
 # User.find(1).albums << album
@@ -38,4 +38,4 @@ end
 #   # end
 
 #   page.save
-end
+# end
