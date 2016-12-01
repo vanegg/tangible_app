@@ -20,7 +20,7 @@
 
 $(document).on('ready',function(ev){
 
-  $(".alert" ).fadeOut(4000);
+  $(".alert" ).fadeOut(6000);
 	// var items = $(".nav li").length;
  //    var leftRight=0;
  //    if(items>5){
