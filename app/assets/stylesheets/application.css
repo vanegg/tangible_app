@@ -27,6 +27,11 @@ p {
   text-justify: auto;
 }
 
+a:hover {
+  color: #D6D6D6;
+  text-decoration: none;
+}
+
 .current_name, .gravatar {
   display: block;
 }
