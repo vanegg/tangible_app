@@ -7,11 +7,18 @@ $(document).on('ready',function(ev){
     updateTitle();
   });
 
+  // disable new-album button once clicked
+  $( '#new-album' ).on('click', function(){
+    $( "#new-album" ).prop( 'disabled', 'true' );
+  })
+
   // listening for photos selected
   // simulates a click on update
   // creates one step upload
   $('#photo_photo').on('change', function(event){
-    $( "#upload" ).trigger( "click" );
+    $( "#upload" ).trigger( "click");
+    $( "#photo_photo" ).prop( 'disabled', 'true' );
+    // promptNewAlbum();
   });
 
   num_album = $('#num_album').text();
@@ -39,4 +46,14 @@ function updateTitle(){
 	album.title = $('#title_field').val();
 	$.post('/update_title',album, function(resp) {
   });
+};
+
+function promptNewAlbum(){
+  // m = "Perfecto! Ya que tienes fotos estas listo para crear un album."
+  // button = "<a href=''>Ok!</a>"
+  // $('#dim-message').html(m);
+  // $('#dim-screen').css('display', 'block');
+  // $('#dim-message').css('display', 'block');
+
+  $('#tutorial .model-content').append("<p>Ya que subiste fotos puedas crear tu album!</p>");
 };

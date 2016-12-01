@@ -10,6 +10,14 @@
         <% if session[:access_token] %>
           <%= render 'photos/insta_select'%>
         <% end %>
+        <div id="tutorial">
+          <div class="modal fade bd-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-sm">
+              <div class="modal-content">
+              </div>
+            </div>
+          </div>
+        </div>
         <div class="col-md-9">
           <div class="row">
             <h1 class='title-page'>Mis fotos</h1>
