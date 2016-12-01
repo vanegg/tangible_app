@@ -1,6 +1,6 @@
 require "instagram"
 
-CALLBACK_URL = "http://localhost:3000/instagram/callback"
+CALLBACK_URL = "https://tangible-app.herokuapp.com/instagram/callback"
 
 Instagram.configure do |config|
   config.client_id     = ENV["INSTA_CLIENT_ID"]
