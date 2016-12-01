@@ -54,6 +54,4 @@ function promptNewAlbum(){
   // $('#dim-message').html(m);
   // $('#dim-screen').css('display', 'block');
   // $('#dim-message').css('display', 'block');
-
-  $('#tutorial .model-content').append("<p>Ya que subiste fotos puedas crear tu album!</p>");
 };

@@ -7,7 +7,6 @@ $(document).on('ready',function(){
 
   $('#download').on("click", function(){
     $('.modal').css('display', 'none');
-    // function promptNewAlbum();
   });
 
   $('#cancel').on("click", function(event){
@@ -15,12 +14,3 @@ $(document).on('ready',function(){
     $('.modal').css('display', 'none');
   });
 });
-
-
-// function promptNewAlbum(){
-//   m = "Perfecto! Ya que tienes fotos estas listo para crear un album."
-//   button = "<a href=''>Ok!</a>"
-//   $('#dim-message').html(m);
-//   $('#dim-screen').css('display', 'block');
-//   $('#dim-message').css('display', 'block');
-// };
