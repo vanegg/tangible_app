@@ -164,6 +164,21 @@ $secondary-color: #F78181;
   margin-bottom: 10px;
   background-color: white;
   height: 130px;
+
+  .btn {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-color: $secondary-color !important;
+  }
+
+  .buttons-area {
+    span {
+      color: $secondary-color !important;
+      a {
+        color: $secondary-color !important;
+      }
+    }
+  }
 }
 
 .btn-sq-xs {

@@ -2,3 +2,10 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+$primary-color: #9d9d9d;
+$primary-dark-color: #F1F1F1;
+$secondary-color: #F78181;
+
+h6 {
+	color: $secondary-color;
+}
