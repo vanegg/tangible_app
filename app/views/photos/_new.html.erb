@@ -1,5 +1,5 @@
 <div id="upload-photo" class="btn btn-default">
-  <%= form_for [current_user,@photo], :photo => user_photos_path(current_user.id), html: { multipart: true } do |f| %>
+  <%= form_for [current_user,@photo], :photo => user_photos_path(current_user.id), remote: true, html: { multipart: true } do |f| %>
     <%#= render 'shared/error_messages', object: @var = @photo %>
     <!-- <span class="btn btn-large btn-default btn-file"> -->
       <%= f.file_field :photo, multiple: true %>
