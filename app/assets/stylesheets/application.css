@@ -47,7 +47,7 @@ p {
  .layout_2{
   padding:45px;
   box-sizing:border-box;
-  text-align: center !important;
+  text-align: center ;
 }
 
 .layout_3{
@@ -82,10 +82,11 @@ p {
   width: 147px;
   border: 2px dashed #A4A4A4;
   border-radius: 7%;  
+  vertical-align: bottom !important;
 }
 
 .layout_3 > .photoboard > img {
-    vertical-align: baseline !important;
+    vertical-align: baseline!important;
   }
 
 .draggable {
