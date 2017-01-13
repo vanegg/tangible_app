@@ -141,7 +141,8 @@ $secondary-color: #F78181;
   display:block;
   font-size:10px;
   margin-top:5px;
-  font-weight:bold
+  font-weight:bold;
+  color: $secondary-color;
 }
 .carousel-inner, .item {
   background-color: #A4A4A4;
@@ -256,6 +257,7 @@ $secondary-color: #F78181;
 }
 
 #title_field {
+  color: $secondary-color;
   text-align: center;
   width: 30%;
   box-sizing: border-box;
@@ -280,6 +282,13 @@ $secondary-color: #F78181;
   background-color: white;
   border: 2px solid #ccc;
 
+}
+
+#dimension {
+  font-size: 13px;
+  color: $primary-color;
+  float: right;
+  font-weight: bold;
 }
 
 #num_album {

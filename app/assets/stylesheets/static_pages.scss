@@ -65,17 +65,10 @@ $secondary-color: #F78181;
 
 #logo {
   float: left;
-  margin-right: 10px;
-  font-size: 1.7em;
-  color: $primary-color;
-  text-transform: uppercase;
-  letter-spacing: -1px;
-  padding-top: 9px;
-  font-weight: bold;
-
+  margin-top: 4px;
+  /*margin-top: 14px;*/
+  height: 63px;
   &:hover {
-    color: #F78181;
-    text-decoration: none;
   }
 }
 /*STATIC PAGES*/

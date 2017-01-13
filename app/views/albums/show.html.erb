@@ -26,7 +26,8 @@
           <div class="row" id="album-title">          
             <%= form_for [current_user, @album], class: 'title_form' do |f| %>
             <%= f.text_field :title, placeholder: "Título del álbum...", value: @album.title,  class: "form-control", id:'title_field'%>
-            <% end %>          
+            <% end %> 
+            <p id="dimension">Tamaño real del album: 14 x 14 cm</p>         
           </div>
           <%= render 'albums/album_carousel' %>
         </div> <!--- album- carousel col-md-9 -->
